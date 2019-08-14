@@ -1,14 +1,14 @@
 import React from 'react'
+import './growerClient.css'
 import NavBar from '../../headerComponents/NavBar'
 
 class growerClient extends React.Component{
 
     render () {
         return (
-            <div>
-                <NavBar />
-
-            </div>   
+                <div>
+                     world
+                </div>
         )
     }
 

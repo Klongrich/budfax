@@ -1,4 +1,5 @@
 import React from 'react'
+import './header.css'
 import { slide as Menu} from 'react-burger-menu'
 
 class Header extends React.Component{
