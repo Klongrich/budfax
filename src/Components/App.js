@@ -2,8 +2,7 @@ import React from 'react'
 import './App.css'
 
 import GridLayout from "react-grid-layout"
-
-import { slide as Menu } from 'react-burger-menu'
+import Header from './headerComponents/header'
 
 
 class App extends React.Component{
@@ -28,26 +27,20 @@ class App extends React.Component{
     render () {
 
         var layout = [
-            {i: 'a', x: 0, y: 0, w: 4, h: 7},
-            {i: 'b', x: 6, y: 0, w: 4, h: 3},
-            {i: 'c', x: 6, y: 3, w: 4, h: 7}
+            {i: 'a', x: 0, y: 0, w: 4, h: 7, static: true},
+            {i: 'b', x: 6, y: 0, w: 4, h: 3, static: true},
+            {i: 'c', x: 6, y: 3, w: 4, h: 7, static: true}
         ];
 
         return (
             <div class="weed-container">
-
-              <div class="NavBar">
-                <Menu>
-                  <div class="work"><a id="home" className="menu-item" href="/">Home</a></div>
-                  <a id="about" className="menu-item" href="/block-chain">About</a>
-                  <a id="travel" className="menu-item" href="/travel">Products</a>
-                  <a id="Company beta" className="menu-item" href="/weedscan">Company Beta</a>
-                </Menu>
-              </div>
-
+                
+                <Header />
+                
                 <div class="weed-header">
                     <h2> Enter Product ID</h2>
-                </div>            
+                </div>
+
                 <React.Fragment>
                     <form onSubmit={this.handleSubmit}>
                         <input id="inputbox"
@@ -81,6 +74,7 @@ class App extends React.Component{
                         </div>
                     </div>
                 </GridLayout>
+                
                 </div>
             </div>
         );
