@@ -1,5 +1,6 @@
 .weed-container{
-    background-image: url('./frostynug.jpg');   
+    /*background-image: url('./frostynug.jpg');   */
+    background: linear-gradient(to right, rgb(0, 255, 0), rgb(164, 229, 165));
     background-size: cover;
     height: 670px;
     overflow: hidden;

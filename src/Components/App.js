@@ -30,30 +30,30 @@ class App extends React.Component{
 
     render () {
         return (
-            <div className="App">
+          //   <div className="App">
         
-              <form onSubmit={this.handleSubmit}>
-                <label htmlFor="name">Enter your name: </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                />
-                <button type="submit">Submit</button>
-              </form>
-              <p>{this.state.greeting}</p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-          </div>
+          //     <form onSubmit={this.handleSubmit}>
+          //       <label htmlFor="name">Enter your name: </label>
+          //       <input
+          //         id="name"
+          //         type="text"
+          //         value={this.state.name}
+          //         onChange={this.handleChange}
+          //       />
+          //       <button type="submit">Submit</button>
+          //     </form>
+          //     <p>{this.state.greeting}</p>
+          //     <a
+          //       className="App-link"
+          //       href="https://reactjs.org"
+          //       target="_blank"
+          //       rel="noopener noreferrer"
+          //     >
+          //       Learn React
+          //     </a>
+          // </div>
 
-            /*
+            
             <BrowserRouter>
                 <NavBar />
                 <Switch>
@@ -61,7 +61,7 @@ class App extends React.Component{
                     <Route path="/growerClient" exact component={GrowerClient}/>
                 </Switch>
             </BrowserRouter>
-            */
+            
         );
     }
 }
