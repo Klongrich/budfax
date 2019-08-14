@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../headerComponents/header'
+import NavBar from '../../headerComponents/NavBar'
 import GridLayout from 'react-grid-layout'
 
 class userClient extends React.Component{
@@ -33,7 +33,7 @@ class userClient extends React.Component{
         return (
             <div class="weed-container">
                 
-                <Header />
+                <NavBar />
                 
                 <div class="weed-header">
                     <h2> Enter Product ID</h2>

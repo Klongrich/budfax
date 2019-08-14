@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../../headerComponents/header'
+import NavBar from '../../headerComponents/NavBar'
 
 class growerClient extends React.Component{
 
     render () {
         return (
             <div>
-                <Header />
+                <NavBar />
 
             </div>   
         )
