@@ -8,7 +8,11 @@ class productCard extends React.Component {
 		var layoutBudStats = [
 			{i: 'a', x: 0, y: 0, w: 4, h: 2, static: true},
             {i: 'b', x: 0, y: 0, w: 4, h: 2, static: true},
-            {i: 'c', x: 0, y: 0, w: 4, h: 2, static: true}
+            {i: 'c', x: 0, y: 0, w: 4, h: 2, static: true},
+            {i: 'd', x: 0, y: 0, w: 4, h: 2, static: true},
+            {i: 'e', x: 0, y: 0, w: 4, h: 2, static: true},
+            {i: 'f', x: 0, y: 0, w: 4, h: 2, static: true}
+
 		];
 		return (
 				<div className="product-card">
@@ -32,7 +36,26 @@ class productCard extends React.Component {
 					<div className="product-stats">
 						<GridLayout class="bud-stats-layout" layout={layoutBudStats} col={2} rowHeight={10} width={40}>
 							<div key="a" className="bud-stats">
-								
+								THCa
+							</div>
+							<div key="b" className="bud-stats">
+								THC
+							</div>
+							<div key="c" className="bud-stats">
+								CBD
+							</div>
+							<div key="d" className="bud-stats">
+								Havest Date
+							</div>
+							<div key="e" className="bud-stats">
+								Havest Location
+							</div>
+							<div key="f" className="bud-stats">
+								Number of Units
+							</div>
+
+						</GridLayout>
+
 					</div>
 
 					
