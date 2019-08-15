@@ -1,0 +1,1 @@
+mysql -h budfaxdata.c0bth7av9jes.us-east-2.rds.amazonaws.com -P 3306 -u admin -p

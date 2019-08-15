@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles.css'
 
 class dataSubmissionTest extends React.Component{
     constructor(props) {
@@ -38,14 +39,6 @@ class dataSubmissionTest extends React.Component{
                 <button type="submit">Submit</button>
             </form>
             <p>{this.state.greeting}</p>
-            <a
-             className="App-link"
-             href="https://reactjs.org"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             Learn React
-           </a>
        </div>
         );
     }
