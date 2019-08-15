@@ -23,18 +23,16 @@ class growerClient extends React.Component{
                      	Grower Client
                     </div>
                     <GridLayout class="clayout" layout={layout} cols={1} rowHeight={30} width={1000}>
-                    	<div key="a">
-                    		<div className="growerInfo">
-                    			<div id="name" className="growerDetails">
-                    				Name: Bob Ross
-                    			</div>
-                    			<div id="location" className="growerDetails">
-                    				Location: The Land Down Under
-                    			</div>
-                    			<div id="website" className="growerDetails">
-                    				Website: DankVape.lol
-                    			</div>
-                  			</div>
+                    	<div key="a" className="growerInfo">
+                    		<div id="name" className="growerDetails">
+                    			Name: Bob Ross
+                    		</div>
+                   			<div id="location" className="growerDetails">
+                   				Location: The Land Down Under
+                   			</div>
+                   			<div id="website" className="growerDetails">
+                   				Website: DankVape.lol
+                   			</div>
                 		</div>
 
                 		<div key="b">
@@ -42,17 +40,18 @@ class growerClient extends React.Component{
                 				<GridLayout class="productlayout" layout={productDetailsLayout} cols={1} rowHeight={10} width={1000}>
                 					<div key="active">
 	                					<div className="activeProducts">
-	                						Actice Products Go here in slider
+	                						Actice Products Component Go here in slider
 	                					</div>
 	                				</div>
 	                				<div key="inactive">
 	                					<div className="inactiveProducts">
-	                						Inactive Products Go here in slider
+	                						Inactive Products Component Go here in slider
 	                					</div>
 	                				</div>
                 				</GridLayout>
                 				<div key="c">
                 					<div className="newProductRegistration">
+                						New Product registration component
                 						<div className="productName">
                 							newProduct name entry here
                 						</div>
