@@ -10,8 +10,7 @@ class Header extends React.Component{
                 <Menu>
                   <div class="work"><a id="home" className="menu-item" href="/">UserClient</a></div>
                   <a id="about" className="menu-item" href="/growerClient">GrowerClient</a>
-                  <a id="travel" className="menu-item" href="/">Node.js</a>
-                  <a id="Company beta" className="menu-item" href="/">Company Beta</a>
+                  <a id="Company beta" className="menu-item" href="/datasubmissiontest"> Node.js</a>
                 </Menu>
             </div>
 
