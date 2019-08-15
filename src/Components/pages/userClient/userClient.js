@@ -76,7 +76,7 @@ class userClient extends React.Component{
                 </React.Fragment> 
 
                 
-
+                
                 <ResponsiveGridLayout
                     className="layout"
                     layouts={layouts}
@@ -102,8 +102,9 @@ class userClient extends React.Component{
                         </div>
                     </div>
                 </ResponsiveGridLayout>
-                
                 </div>
+                
+                
             
         )
 
