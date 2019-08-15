@@ -1,14 +1,16 @@
+
+
 .weed-container{
     /*background-image: url('./frostynug.jpg');   */
     background: linear-gradient(to right, rgb(0, 255, 0), rgb(164, 229, 165));
     background-size: cover;
-    height: 670px;
-    overflow: hidden;
+    height: 1500px;
     text-align: center;
   }
   
   .weed-header h2{
-    padding-top:40px;
+    margin-top: 0px;
+    padding-top: 75px;
     font-size: 42px;
   }
   
@@ -33,7 +35,6 @@
   .weedPicture{
     height: 290px;
     width: 360px;
-    margin-left: 25px;
     background-color:white;
   }
   
@@ -48,4 +49,31 @@
     width: 363px;
     background-color: white;
   }
+
+  .searchbar {
+    width: 420px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .searchbar{
+      width: 280px;
+    }
+
+    .weed-container {
+      height: 1050px;
+    }
+
+    .weedPicture{
+      margin-left:15px;
+    }
+    
+    .weedName {
+      margin-left:15px;
+    }
+    
+    .weedInfo{
+      margin-left:15px;
+    }
+  }
+  
   

@@ -15,8 +15,6 @@ class App extends React.Component{
         render () {
           return(
             
-
-          
             <BrowserRouter>
                 <NavBar />
                 <Switch>
@@ -26,7 +24,6 @@ class App extends React.Component{
                 </Switch>
             </BrowserRouter>
                 
-
           );
         }        
 }
