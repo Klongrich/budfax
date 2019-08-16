@@ -63,7 +63,7 @@ class userClient extends React.Component{
                         Product ID</h2>
                 </div>
 
-                <React.Fragment>
+                
                     <form   onSubmit={this.handleSubmit}>
                         <input class="bar"
                             type="text"
@@ -73,7 +73,7 @@ class userClient extends React.Component{
                         />
                 </form>
                 <h3 id="YourProduct">Your product ID: {this.state.productID}</h3>
-                </React.Fragment> 
+             
 
                 
                 
