@@ -1,0 +1,3 @@
+"lsof -P -i" (Search for ports running)
+"kill PIDnumeber" (stop procces)
+"kill -CONT PIDnumber" (Resume Proccess)

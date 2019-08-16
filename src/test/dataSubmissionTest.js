@@ -6,7 +6,10 @@ class dataSubmissionTest extends React.Component{
         super(props);
         this.state = {
         name: '',
-        greeting: ''
+        greeting: '',
+        username: '',
+        fuckme: '',
+        Othertest: ''
         };
         
     this.handleChange = this.handleChange.bind(this);
@@ -19,16 +22,16 @@ class dataSubmissionTest extends React.Component{
     
     handleSubmit(event) {
         event.preventDefault();
-        fetch(`/api/greeting?name=${encodeURIComponent(this.state.name)}`)
+        fetch(`/api/greeting?name=${encodeURIComponent(this.state.name)}&fucking=hello`)
         .then(response => response.json())
-        .then(state => this.setState(state));
+        .then(data => {this.setState(data)})
     }
     
     render () {
         return (
              <div className="App">
     
-            <form onSubmit={this.handleSubmit}>
+             <form onSubmit={this.handleSubmit}>
                  <label htmlFor="name">Enter your name: </label>
                 <input
                 id="name"
@@ -39,6 +42,8 @@ class dataSubmissionTest extends React.Component{
                 <button type="submit">Submit</button>
             </form>
             <p>{this.state.greeting}</p>
+            <p>{this.state.fuckme}</p>
+            <p>{this.state.Othertest}</p>
        </div>
         );
     }
