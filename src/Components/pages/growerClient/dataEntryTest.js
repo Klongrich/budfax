@@ -13,10 +13,10 @@ export default function Form() {
       <input type="text" placeholder="Company Name" name="Company Name" ref={register} />
       <input type="text" placeholder="Havest Date" name="Havest Date" ref={register({max: 0})} />
       <input type="text" placeholder="Type" name="Type" ref={register} />
-      <input type="number" placeholder="Number of Units" name="Number of Units" ref={register} />
-      <input type="text" placeholder="THC" name="THC" ref={register} />
-      <input type="text" placeholder="THCa" name="THCa" ref={register} />
-      <input type="number" placeholder="CBD" name="CBD" ref={register} />
+      <input type="number" placeholder="Number of Units" name="Number of Units" ref={register({min: 0})} />
+      <input type="number" placeholder="THC" name="THC" ref={register({max: 100, min: 0})} />
+      <input type="number" placeholder="THCa" name="THCa" ref={register({max: 100, min: 0})} />
+      <input type="number" placeholder="CBD" name="CBD" ref={register({max: 100, min: 0})} />
       <input type="email" placeholder="Email" name="Email" ref={register} />
 
       <input type="submit" />
