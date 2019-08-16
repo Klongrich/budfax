@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pino = require('express-pino-logger')();
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -24,7 +23,7 @@ var con = mysql.createConnection({
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(pino);
+
 
 app.get('/api/growerData', (req, res) => {
 
