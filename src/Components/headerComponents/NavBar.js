@@ -11,6 +11,7 @@ class Header extends React.Component{
                   <div class="work"><a id="home" className="menu-item" href="/">UserClient</a></div>
                   <a id="about" className="menu-item" href="/growerClient">GrowerClient</a>
                   <a id="Company beta" className="menu-item" href="/datasubmissiontest"> Node.js</a>
+                  <a id="dataEntryTest" className="menu-item" href="/dataEntryTest"> dataEntryTest</a>
                 </Menu>
             </div>
 

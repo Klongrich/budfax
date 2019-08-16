@@ -7,12 +7,14 @@ import NavBar from './headerComponents/NavBar'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Datasubmissiontest from  '../test/dataSubmissionTest'
 import growerClient from './pages/growerClient/growerClient'
+import dataEntryTest from './pages/growerClient/dataEntryTest'
 
 
 
 class App extends React.Component{
 
         render () {
+          const testy = "penis";
           return(
             
             <BrowserRouter>
@@ -21,11 +23,11 @@ class App extends React.Component{
                     <Route path="/" exact component={UserClient}/>
                     <Route path="/growerclient" exact component={growerClient}/>
                     <Route  path="/datasubmissiontest" exact component={Datasubmissiontest} />
+                    <Route path="/dataEntryTest" exact component={dataEntryTest}/>
                 </Switch>
-            </BrowserRouter>
-                
+            </BrowserRouter>              
           );
-        }        
+       }        
 }
 
 export default App;
