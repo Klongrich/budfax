@@ -32,15 +32,16 @@ app.use(pino);
 
 app.get('/api/greeting', (req, res) => {
 
-  const name = req.query.name;
-  const productID =req.query.productID
-  const fucking = req.query.fucking;
+  console.log(parseInt(req.query.NumberOfUnits))
+  console.log(req.query);
 
   res.setHeader('Content-Type', 'application/json');
   
+  /*
   res.send(JSON.stringify({ greeting: `Succes Mother fucker: (${name})` ,
                             fuckme: `fuck (${fucking})`,
                             Othertest: `that was some boof` }));
+  */
   
   
   /*

@@ -7,12 +7,7 @@ import NavBar from './headerComponents/NavBar'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Datasubmissiontest from  '../test/dataSubmissionTest'
 import growerClient from './pages/growerClient/growerClient'
-<<<<<<< HEAD
 import dataEntryTest from './pages/growerClient/growerDataEntryTest'
-=======
-import Form from './pages/growerClient/dataEntryTest'
-import dataEntryTest from './pages/growerClient/dataEntryTest'
->>>>>>> 85cf08456abfb1fbb290c6488db5931f123508b1
 import growerEnteryScript from '../test/growerEternyScript'
 
 
@@ -29,8 +24,7 @@ class App extends React.Component{
                     <Route path="/" exact component={UserClient}/>
                     <Route path="/growerclient" exact component={growerClient}/>
                     <Route  path="/datasubmissiontest" exact component={Datasubmissiontest} />
-                    <Route path="/dataEntryTest" exact component={Form}/>
-                    <Route path="/dataEntryTest" exact component={dataEntryTest}/>
+                    <Route path="/dataEntryTest" exact component={dataEntryTest}/>>
                     <Route path="/growerEnteryScript" exact component={growerEnteryScript}/>
                 </Switch>
             </BrowserRouter>              
