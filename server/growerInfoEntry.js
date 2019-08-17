@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var mysql = require('mysql');
 
+/*
 var con = mysql.createConnection({
     host     : "budfaxdata.c0bth7av9jes.us-east-2.rds.amazonaws.com",
     user     : "admin",
@@ -18,7 +19,7 @@ var con = mysql.createConnection({
   
     console.log('Connected to database.');
   });
-
+*/
 
 const app = express();
 
@@ -44,13 +45,14 @@ app.get('/api/growerData', (req, res) => {
 
   res.setHeader('Content-Type', 'application/json');
   
+  /*
   var sql = "INSERT INTO product_info ('" + data_fields + ")  VALUES ('" + name + "," + haverstDate + "')";
 
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Success Mother Fucker");
   })
-  
+*/
 });
 
 app.listen(3010, () =>
