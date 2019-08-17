@@ -8,6 +8,8 @@ import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Datasubmissiontest from  '../test/dataSubmissionTest'
 import growerClient from './pages/growerClient/growerClient'
 import Form from './pages/growerClient/dataEntryTest'
+import dataEntryTest from './pages/growerClient/dataEntryTest'
+import growerEnteryScript from '../test/growerEternyScript'
 
 
 
@@ -24,6 +26,8 @@ class App extends React.Component{
                     <Route path="/growerclient" exact component={growerClient}/>
                     <Route  path="/datasubmissiontest" exact component={Datasubmissiontest} />
                     <Route path="/dataEntryTest" exact component={Form}/>
+                    <Route path="/dataEntryTest" exact component={dataEntryTest}/>
+                    <Route path="/growerEnteryScript" exact component={growerEnteryScript}/>
                 </Switch>
             </BrowserRouter>              
           );

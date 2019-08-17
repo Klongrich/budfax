@@ -6,6 +6,7 @@ var mysql = require('mysql');
 const app = express();
 
 /*
+
 var con = mysql.createConnection({
   host     : "budfaxdata.c0bth7av9jes.us-east-2.rds.amazonaws.com",
   user     : "admin",
@@ -22,7 +23,9 @@ con.connect(function(err) {
 
   console.log('Connected to database.');
 });
+
 */
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
@@ -30,14 +33,16 @@ app.use(pino);
 app.get('/api/greeting', (req, res) => {
 
   const name = req.query.name;
+  const productID =req.query.productID
   const fucking = req.query.fucking;
 
   res.setHeader('Content-Type', 'application/json');
+  
   res.send(JSON.stringify({ greeting: `Succes Mother fucker: (${name})` ,
                             fuckme: `fuck (${fucking})`,
                             Othertest: `that was some boof` }));
   
-
+  
   /*
   var sql = "INSERT INTO testing (name) VALUES ('" + name + "')";
 
@@ -45,11 +50,23 @@ app.get('/api/greeting', (req, res) => {
     if (err) throw err;
     console.log("Success Mother Fucker");
   })
+
+  var getInfo = "SELECT name FROM testing";
+
+  con.query(getInfo, function(err, result, fields) {
+    if (err) throw err;
+    res.write(JSON.stringify({ greeting: `Succes Mother fucker: (${result[5].name}) Instered To Database` }));
+    res.write( {ifThisWorkslol: `howdy there`});
+    res.end();
+    console.log(result[1].name);
+  })
   */
+  
 
 });
 
 app.listen(3010, () =>
-  console.log('Express server is running on localhost:3003')
+  console.log('Express server is running on localhost:3010')
 );
+
 

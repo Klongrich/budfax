@@ -1,12 +1,29 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pino = require('express-pino-logger')();
 var mysql = require('mysql');
+
+var con = mysql.createConnection({
+    host     : "budfaxdata.c0bth7av9jes.us-east-2.rds.amazonaws.com",
+    user     : "admin",
+    password : "getstoned123",
+    port     : "3306",
+    database : "budfaxdata"
+  });
+  
+  con.connect(function(err) {
+    if (err) {
+      console.error('Database connection failed: ' + err.stack);
+      return;
+    }
+  
+    console.log('Connected to database.');
+  });
+
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(pino);
+
 
 app.get('/api/growerData', (req, res) => {
 
@@ -21,11 +38,18 @@ app.get('/api/growerData', (req, res) => {
   const cbd = req.query.cbd;
   const cbg = req.query.cbd;
 
+  const data_fields = "Name, DateListed";
+
+  console.log(req.query);
+
   res.setHeader('Content-Type', 'application/json');
   
-  res.send(JSON.stringify({ greeting: `Succes Mother fucker: (${name})` ,
-                            fuckme: `fuck (${fucking})`,
-                            Othertest: `that was some boof` }));
+  var sql = "INSERT INTO product_info ('" + data_fields + ")  VALUES ('" + name + "," + haverstDate + "')";
+
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Success Mother Fucker");
+  })
   
 });
 

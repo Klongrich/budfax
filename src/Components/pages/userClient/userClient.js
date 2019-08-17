@@ -23,7 +23,11 @@ class userClient extends React.Component{
 
      handleSubmit(event) {
         alert("Product Not Found");
+
         event.preventDefault();
+        fetch(`/api/greeting?productID=${encodeURIComponent(this.state.productID)}`)
+        .then(response => response.json())
+        .then(data => {this.setState(data)})
      };
 
      
