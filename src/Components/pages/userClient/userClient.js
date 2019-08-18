@@ -11,7 +11,17 @@ class userClient extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            productID: ''
+            productID: '',
+            productName: '',
+			companyName: '',
+			email: '',
+			haverstDate: '',
+			strand: '',
+			numberOfUnits: '',
+			thc: '',
+			thca: '',
+            cbd: '',
+            pictureName: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,9 +35,11 @@ class userClient extends React.Component{
         alert("Product Not Found");
 
         event.preventDefault();
-        fetch(`/api/greeting?productID=${encodeURIComponent(this.state.productID)}`)
+        fetch(`/api/growerData?ID=${encodeURIComponent(this.state.productID)}`)
         .then(response => response.json())
-        .then(data => {this.setState(data)})
+        .then(data => this.setState(data))
+
+        console.log(this.state)
      };
 
      
@@ -97,12 +109,28 @@ class userClient extends React.Component{
                     <div key="2"> 
                         <div class="weedName">
                              Put Name of Strain / Product here
+                             <p>{this.state.productName}</p>
                         </div>
                     </div>
                     
                     <div key="3"> 
                         <div class="weedInfo">
                             Put description of weed / product here
+                            
+                            <div class="one">
+                                <p>Company: {this.state.companyName}</p>
+                                <p>Email: {this.state.email}</p>
+                                <p>Strand: {this.state.strand}</p>
+                                <p>Haverst Date: {this.state.haverstDate}</p>
+                            </div>
+
+                            <div class="two">
+                                <p>Units: {this.state.numberOfUnits}</p>
+                                <p>THC: {this.state.thc}</p>
+                                <p>THCa: {this.state.thca}</p>
+                                <p>CBD: {this.state.cbd}</p>
+                            </div>
+
                         </div>
                     </div>
                 </ResponsiveGridLayout>

@@ -1,12 +1,11 @@
 import React from 'react'
 import './App.css'
 
-import GrowerClient from './pages/growerClient/growerClient'
 import UserClient from './pages/userClient/userClient'
 import NavBar from './headerComponents/NavBar'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Datasubmissiontest from  '../test/dataSubmissionTest'
-import dataEntryTest from './pages/growerClient/dataEntryTest'
+import dataEntryTest from './pages/growerClient/growerEntryForum'
 import growerEnteryScript from '../test/growerEternyScript'
 import ProductCard from './pages/growerClient/productCard'
 

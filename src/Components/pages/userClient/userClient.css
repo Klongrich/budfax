@@ -8,6 +8,16 @@
 
     text-align: center;
   }
+
+  .one{
+    margin-left:-160px;
+  }
+
+  .two{
+    margin-left:260px;
+    margin-top: -140px;
+  }
+
   
   .weed-header h2{
     margin-top: 0px;

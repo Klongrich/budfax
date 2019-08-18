@@ -1,5 +1,5 @@
 import React from 'react';
-import './dataEntryTest.css';
+import './growerEntryForum.css';
 
 class dataEntryTest extends React.Component {
 	constructor(props) {
@@ -83,7 +83,7 @@ class dataEntryTest extends React.Component {
 								&thc=${encodeURIComponent(this.state.thc)}\
 								&thca=${encodeURIComponent(this.state.thca)}\
 								&cbd=${encodeURIComponent(this.state.cbd)}\
-								&uniqueID=${encodeURIComponent(this.state.productName)}`)
+								&uniqueID=${encodeURIComponent(this.state.uniqueID)}`)
         .then(response => response.json())
 		.then(state => this.setState(state))
 		
