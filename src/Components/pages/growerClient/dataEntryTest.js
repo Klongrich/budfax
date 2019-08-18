@@ -99,7 +99,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.companyName}
 	                onChange={this.handleChange2}
 	                />
-	                <label class="data-entry-label" htmlFor="productImage">Attach A image: </label>
+	                <label class="data-entry-label" htmlFor="productImage">Attach an image: </label>
 	                <input
 	                class="data-entry-input"
 	                id="productImage"

@@ -7,13 +7,13 @@
   padding-bottom:80px;
   margin-left: 0 auto;
   center: 0 auto;
-  background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
 .grower-data-entry-form {
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.3);
   background-color: #0e403c;
   padding-top: 50px;
   padding-right: 50px;
@@ -23,10 +23,6 @@
   width: 0 auto;
   margin: 0 auto;
   border-radius: 15px;
-}
-
-.bottom {
-  float:left;
 }
 
 /*h1 {
