@@ -5,8 +5,6 @@ var mysql = require('mysql');
 
 const app = express();
 
-/*
-
 var con = mysql.createConnection({
   host     : "budfaxdata.c0bth7av9jes.us-east-2.rds.amazonaws.com",
   user     : "admin",
@@ -24,34 +22,36 @@ con.connect(function(err) {
   console.log('Connected to database.');
 });
 
-*/
-
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
 app.get('/api/greeting', (req, res) => {
 
-  console.log(parseInt(req.query.NumberOfUnits))
-  console.log(req.query);
+  console.log(req.query.ProductName);
 
   res.setHeader('Content-Type', 'application/json');
   
   /*
-  res.send(JSON.stringify({ greeting: `Succes Mother fucker: (${name})` ,
-                            fuckme: `fuck (${fucking})`,
-                            Othertest: `that was some boof` }));
-  */
-  
-  
-  /*
+  name = req.query.name;
+
   var sql = "INSERT INTO testing (name) VALUES ('" + name + "')";
 
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Success Mother Fucker");
   })
+  */
 
+  
+  /*
+  res.send(JSON.stringify({ greeting: `Succes Mother fucker: (${name})` ,
+                            fuckme: `fuck (${fucking})`,
+                            Othertest: `that was some boof` }));
+  /
+  
+
+  /*
   var getInfo = "SELECT name FROM testing";
 
   con.query(getInfo, function(err, result, fields) {

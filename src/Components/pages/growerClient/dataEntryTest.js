@@ -7,14 +7,14 @@ class dataEntryTest extends React.Component {
 		this.state = {
 			productName: '',
 			companyName: '',
-			productImage: '',
 			email: '',
 			havestDate: '',
 			strand: '',
 			numberOfUnit: '',
 			thc: '',
 			thca: '',
-			cbd: ''
+			cbd: '',
+			uniqueID: '714'
 		};
 
 		this.handleChange1 = this.handleChange1.bind(this);
@@ -74,9 +74,18 @@ class dataEntryTest extends React.Component {
 
 	handleSubmit(event) {
         event.preventDefault();
-        fetch(`/api/growerdataentry?name=${encodeURIComponent(this.state)}`)
+		fetch(`/api/growerData?productName=${encodeURIComponent(this.state.productName)}\
+								&companyName=${encodeURIComponent(this.state.companyName)}\
+								&email=${encodeURIComponent(this.state.email)}\
+								&haverstDate=${encodeURIComponent(this.state.havestDate)}\
+								&strand=${encodeURIComponent(this.state.strand)}\
+								&numberofUnits=${encodeURIComponent(this.state.numberOfUnit)}\
+								&thc=${encodeURIComponent(this.state.thc)}\
+								&thca=${encodeURIComponent(this.state.thca)}\
+								&cbd=${encodeURIComponent(this.state.cbd)}\
+								&uniqueID=${encodeURIComponent(this.state.productName)}`)
         .then(response => response.json())
-		.then(state => this.setState(state));
+		.then(state => this.setState(state))
 		
 		console.log(this.state);
     }
