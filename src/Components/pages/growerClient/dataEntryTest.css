@@ -69,7 +69,6 @@
 
 .data-entry-input[type="submit"] {
   background: white;
-  color: white;
   text-transform: uppercase;
   border: none;
   margin-top: 40px;
@@ -107,7 +106,6 @@
 }
 
 .data-entry-input[type="submit"]{
-  background: green;
   margin-left: 0 auto;
 }
 
@@ -115,7 +113,6 @@
   center: 0 auto;
   width: 0 auto;
   height: 50px;
-  background: yellow;
   border-radius: 45px;
   margin-top: 50px;
 }
@@ -123,4 +120,8 @@
   border-radius: 15px;
   height: 100%;
   width: 100%;
+}
+
+#btn:hover{
+  background-color: rgba(150, 150, 150, 1);
 }
