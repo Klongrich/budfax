@@ -7,7 +7,7 @@ import NavBar from './headerComponents/NavBar'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Datasubmissiontest from  '../test/dataSubmissionTest'
 import growerClient from './pages/growerClient/growerClient'
-import dataEntryTest from './pages/growerClient/growerDataEntryTest'
+import dataEntryTest from './pages/growerClient/dataEntryTest'
 import growerEnteryScript from '../test/growerEternyScript'
 
 

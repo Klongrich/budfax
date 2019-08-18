@@ -1,40 +1,51 @@
-body {
-  background: #0e403c;
+.grower-data-entry-container {
+  height: 0 auto;
+  width: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top:100px;
+  padding-bottom:80px;
+  margin-left: 0 auto;
+  center: 0 auto;
+  background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
-form {
-  padding-top: 5%;
+.grower-data-entry-form {
+  background-color: #0e403c;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
   max-width: 500px;
+  width: 0 auto;
   margin: 0 auto;
+  border-radius: 15px;
 }
 
-h1 {
+/*h1 {
   font-weight: 100;
   color: white;
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(79, 98, 148);
-}
+}*/
 
-.form {
-  background: #0e101c;
+.grower-data-entry-form {
+  background: #0e403c;
   max-width: 400px;
-  margin: 2 auto;
+  margin: 1 auto;
 }
 
-p {
-  color: #bf1000;
-}
 
-p::before {
+.data-enter-input::before {
   display: inline;
   content: "⚠ ";
 }
 
-input {
+.data-entry-input {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -45,8 +56,8 @@ input {
   font-size: 14px;
 }
 
-label {
-  line-height: 2;
+.data-entry-label {
+  line-height: 0;
   text-align: left;
   display: block;
   margin-bottom: 13px;
@@ -56,8 +67,8 @@ label {
   font-weight: 200;
 }
 
-input[type="submit"] {
-  background: #ec5990;
+.data-entry-input[type="submit"] {
+  background: white;
   color: white;
   text-transform: uppercase;
   border: none;
@@ -68,31 +79,48 @@ input[type="submit"] {
   letter-spacing: 10px;
 }
 
-input[type="submit"]:hover {
+.data-entry-input[type="submit"]:hover {
   background: darkgreen;
 }
 
-input[type="button"]:active,
-input[type="submit"]:active {
+.data-entry-input[type="button"]:active,
+.data-entry-input[type="submit"]:active {
   transition: 0.3s all;
   transform: translateY(3px);
   border: 1px solid transparent;
   opacity: 0.8;
 }
 
-input:disabled {
+.data-entry-input:disabled {
   opacity: 0.4;
 }
 
-input[type="button"]:hover {
+.data-entry-input[type="button"]:hover {
   transition: 0.3s all;
+
 }
 
-input[type="button"],
-input[type="submit"] {
+.data-entry-input[type="button"],
+.data-entry-input[type="submit"] {
   -webkit-appearance: none;
+  margin-left: 100px;
 }
 
-input[type="submit"]{
+.data-entry-input[type="submit"]{
   background: green;
+  margin-left: 0 auto;
+}
+
+.data-entry-submit-btn {
+  center: 0 auto;
+  width: 0 auto;
+  height: 50px;
+  background: yellow;
+  border-radius: 45px;
+  margin-top: 50px;
+}
+#btn{
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
 }
