@@ -7,7 +7,10 @@ function sendData(data) {
 	fetch(`/api/greeting?CompanyName=${data.CompanyName}`)
 	fetch(`/api/greeting?HaverstDate=${data.HaverstDate}`)
 	fetch(`/api/greeting?Type=${data.Type}`)
-    .then(response => response.json());
+	fetch(`/api/greeting?NumberOfUnits=${data.NumberofUnits}`)
+	fetch(`/api/greeting?THC=${data.THC}`)
+	fetch(`/api/greeting?THCa=${data.THCa}`)
+	.then(response => response.json());
 }
 
 
