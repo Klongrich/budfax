@@ -35,7 +35,7 @@ class userClient extends React.Component{
         alert("Product Not Found");
 
         event.preventDefault();
-        fetch(`/api/growerData?ID=${encodeURIComponent(this.state.productID)}`)
+        fetch(`/api/clientData?ID=${encodeURIComponent(this.state.productID)}`)
         .then(response => response.json())
         .then(data => this.setState(data))
 

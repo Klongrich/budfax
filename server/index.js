@@ -26,45 +26,75 @@ con.connect(function(err) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
-app.get('/api/greeting', (req, res) => {
+app.get('/api/growerData', (req, res) => {
 
-  console.log(req.query.ProductName);
+  const productName = req.query.productName;
+  const companyName = req.query.companyName;
+  const email = req.query.email;
+  const strand = req.query.strand;
+  const haverstDate = req.query.haverstDate;
+  const numberOfUints = parseInt(req.query.numberOfUints);
+  const thc = parseFloat(req.query.thc);
+  const thca = parseFloat(req.query.thca);
+  const cbd = parseFloat(req.query.cbd);
+  const pictureName = req.query.pictureName;
+  const uniqueID = parseInt(req.query.uniqueID);
+
+  const data_fields = "Name, DateListed";
+
+  console.log(cbd);
 
   res.setHeader('Content-Type', 'application/json');
-  
-  /*
-  name = req.query.name;
 
-  var sql = "INSERT INTO testing (name) VALUES ('" + name + "')";
+  
+  var sql = "INSERT INTO Product_Info (productName, companyName, email, haverstDate, \
+             strand, Units, THC, THCa, CBD, pictureName, uniqueID) \
+             VALUES ('" + productName + " '  ,  ' " + companyName + "', '" + email + "', \
+             '" + haverstDate + "', '" + strand + "' , '" + numberOfUints + "' , '" + thc + " ' \
+             , '" + thca + "', ' " + cbd + " ' , '" + pictureName + " ' , '" + uniqueID + " ')";
 
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Success Mother Fucker");
   })
-  */
 
-  
-  /*
-  res.send(JSON.stringify({ greeting: `Succes Mother fucker: (${name})` ,
-                            fuckme: `fuck (${fucking})`,
-                            Othertest: `that was some boof` }));
-  /
-  
+});
 
-  /*
-  var getInfo = "SELECT name FROM testing";
+
+
+app.get('/api/clientData', (req, res) => { 
+
+  console.log(req.query.ID);
+
+  const ID = req.query.ID;
+
+  res.setHeader('Content-Type', 'application/json');
+
+  var getInfo = "SELECT * FROM Product_Info WHERE uniqueID = '" + ID + "'";
 
   con.query(getInfo, function(err, result, fields) {
     if (err) throw err;
-    res.write(JSON.stringify({ greeting: `Succes Mother fucker: (${result[5].name}) Instered To Database` }));
-    res.write( {ifThisWorkslol: `howdy there`});
-    res.end();
-    console.log(result[1].name);
-  })
-  */
-  
 
-});
+    /*
+    res.send({ productName: `${result[0].productName}` });
+    */
+    
+    res.send({   productName: `${result[0].productName}` ,
+                                companyName: `${result[0].companyName}` ,
+                                email: `${result[0].email}` ,
+                                haverstDate: `${result[0].haverstDate}` ,
+                                strand: `${result[0].strand}` ,
+                                numberOfUnits: `${result[0].Units}` ,
+                                thc: `${result[0].THC}` ,
+                                thca: `${result[0].THCa}` ,
+                                cbd: `${result[0].CBD}` ,
+                                pictureName: `${result[0].pictureName}`
+                                                                            })
+    
+    console.log(result[0].productName);
+  })
+
+})
 
 app.listen(3010, () =>
   console.log('Express server is running on localhost:3010')
