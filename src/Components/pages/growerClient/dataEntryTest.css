@@ -7,13 +7,13 @@
   padding-bottom:80px;
   margin-left: 0 auto;
   center: 0 auto;
-  background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
 .grower-data-entry-form {
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.3);
   background-color: #0e403c;
   padding-top: 50px;
   padding-right: 50px;
@@ -23,10 +23,6 @@
   width: 0 auto;
   margin: 0 auto;
   border-radius: 15px;
-}
-
-.bottom {
-  float:left;
 }
 
 /*h1 {
@@ -73,7 +69,6 @@
 
 .data-entry-input[type="submit"] {
   background: white;
-  color: white;
   text-transform: uppercase;
   border: none;
   margin-top: 40px;
@@ -111,7 +106,6 @@
 }
 
 .data-entry-input[type="submit"]{
-  background: green;
   margin-left: 0 auto;
 }
 
@@ -119,7 +113,6 @@
   center: 0 auto;
   width: 0 auto;
   height: 50px;
-  background: yellow;
   border-radius: 45px;
   margin-top: 50px;
 }
@@ -127,4 +120,8 @@
   border-radius: 15px;
   height: 100%;
   width: 100%;
+}
+
+#btn:hover{
+  background-color: rgba(150, 150, 150, 1);
 }
