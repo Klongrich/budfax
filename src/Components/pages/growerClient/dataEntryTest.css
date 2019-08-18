@@ -1,4 +1,4 @@
-.grower-data-entry-container {
+.grower-data-entry-container{
   height: 0 auto;
   width: 0 auto;
   padding-left: 5%;
@@ -23,6 +23,10 @@
   width: 0 auto;
   margin: 0 auto;
   border-radius: 15px;
+}
+
+.bottom {
+  float:left;
 }
 
 /*h1 {
