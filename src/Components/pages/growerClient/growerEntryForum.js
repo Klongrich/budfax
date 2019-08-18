@@ -115,7 +115,7 @@ class dataEntryTest extends React.Component {
 	                class="data-entry-input"
 	                id="productImage"
 	                type="file"
-	                value={this.state.harvestDate}
+	                value={this.state.productImage}
 	                onChange={this.handleChange10}
 	                />
 	                <label class="data-entry-label" htmlFor="havestDate">Enter your havest date: </label>
