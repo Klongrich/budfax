@@ -37,31 +37,33 @@ class dataEntryTest extends React.Component {
 	}
 
 	handleChange3(event) {
-		this.setState({ email: event.target.value });
+		this.setState({ harvestDate: event.target.value });
 	}
 
 	handleChange4(event) {
-		this.setState({ havestDate: event.target.value });
-	}
-
-	handleChange5(event) {
 		this.setState({ strand: event.target.value });
 	}
 
-	handleChange6(event) {
+	handleChange5(event) {
 		this.setState({ numberOfUnit: event.target.value });
 	}
 
-	handleChange7(event) {
+	handleChange6(event) {
 		this.setState({ thc: event.target.value });
 	}
 
-	handleChange8(event) {
+	handleChange7(event) {
 		this.setState({ thca: event.target.value });
 	}
 
-	handleChange9(event) {
+	handleChange8(event) {
+		
 		this.setState({ cbd: event.target.value });
+	}
+
+	handleChange9(event) {
+		this.setState({ email: event.target.value });
+
 	}
 
 	handleSubmit(event) {
@@ -94,9 +96,9 @@ class dataEntryTest extends React.Component {
 	                <label class="data-entry-label" htmlFor="havestDate">Enter your havest date: </label>
 	                <input
 	                class="data-entry-input"
-	                id="havestDate"
-	                type="text"
-	                value={this.state.havestDate}
+	                id="harvestDate"
+	                type="date"
+	                value={this.state.harvestDate}
 	                onChange={this.handleChange3}
 	                />
 	                <label class="data-entry-label" htmlFor="strand">Enter your strand: </label>
@@ -111,7 +113,7 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="numberOfUnit"
-	                type="text"
+	                type="number"
 	                value={this.state.numberOfUnit}
 	                onChange={this.handleChange5}
 	                />
@@ -119,7 +121,7 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="thc"
-	                type="text"
+	                type="number"
 	                value={this.state.thc}
 	                onChange={this.handleChange6}
 	                />
@@ -127,7 +129,7 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="thca"
-	                type="text"
+	                type="number"
 	                value={this.state.thca}
 	                onChange={this.handleChange7}
 	                />
@@ -135,7 +137,7 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="cbd"
-	                type="text"
+	                type="number"
 	                value={this.state.cbd}
 	                onChange={this.handleChange8}
 	                />
@@ -143,10 +145,12 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="email"
-	                type="text"
+	                type="email"
 	                value={this.state.email}
 	                onChange={this.handleChange9}
 	                />
+	                
+	               
 	                <div class="data-entry-submit-btn">
 	                	<button id='btn' type="submit">Submit</button>
 	                </div>
