@@ -7,6 +7,7 @@ class dataEntryTest extends React.Component {
 		this.state = {
 			productName: '',
 			companyName: '',
+			productImage: '',
 			email: '',
 			havestDate: '',
 			strand: '',
@@ -25,6 +26,7 @@ class dataEntryTest extends React.Component {
 		this.handleChange7 = this.handleChange7.bind(this);
 		this.handleChange8 = this.handleChange8.bind(this);
 		this.handleChange9 = this.handleChange9.bind(this);
+		this.handleChange10 = this.handleChange10.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -66,6 +68,10 @@ class dataEntryTest extends React.Component {
 
 	}
 
+	handleChange10(event) {
+		this.setState({ productImage: event.target.value });
+	}
+
 	handleSubmit(event) {
         event.preventDefault();
         fetch(`/api/growerdataentry?name=${encodeURIComponent(this.state)}`)
@@ -92,6 +98,14 @@ class dataEntryTest extends React.Component {
 	                type="text"
 	                value={this.state.companyName}
 	                onChange={this.handleChange2}
+	                />
+	                <label class="data-entry-label" htmlFor="productImage">Attach A image: </label>
+	                <input
+	                class="data-entry-input"
+	                id="productImage"
+	                type="file"
+	                value={this.state.harvestDate}
+	                onChange={this.handleChange10}
 	                />
 	                <label class="data-entry-label" htmlFor="havestDate">Enter your havest date: </label>
 	                <input
@@ -149,8 +163,6 @@ class dataEntryTest extends React.Component {
 	                value={this.state.email}
 	                onChange={this.handleChange9}
 	                />
-	                
-	               
 	                <div class="data-entry-submit-btn">
 	                	<button id='btn' type="submit">Submit</button>
 	                </div>
