@@ -70,7 +70,9 @@ class dataEntryTest extends React.Component {
         event.preventDefault();
         fetch(`/api/growerdataentry?name=${encodeURIComponent(this.state)}`)
         .then(response => response.json())
-        .then(state => this.setState(state));
+		.then(state => this.setState(state));
+		
+		console.log(this.state);
     }
 
     render () {
