@@ -14,6 +14,7 @@ class Header extends React.Component{
                   <a id="dataEntryTest" className="menu-item" href="/dataEntryTest"> dataEntryTest</a>
                   <a id="growerEntryScript" className="menu-item" href="/growerEnteryScript"> dataEntryScript</a>
                   <a id="Product Card" className="product-card" href="/ProductCard">Product Card </a>
+                  <a id="Product Card" className="product-card" href="/fill30000">Test 30k </a>
                 </Menu>
             </div>
 

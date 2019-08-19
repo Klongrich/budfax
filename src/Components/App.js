@@ -8,6 +8,7 @@ import Datasubmissiontest from  '../test/dataSubmissionTest'
 import dataEntryTest from './pages/growerClient/growerEntryForum'
 import growerEnteryScript from '../test/growerEternyScript'
 import ProductCard from './pages/growerClient/productCard'
+import test30k from '../test/filll30000'
 
 
 
@@ -25,6 +26,8 @@ class App extends React.Component{
                     <Route path="/dataEntryTest" exact component={dataEntryTest}/>>
                     <Route path="/growerEnteryScript" exact component={growerEnteryScript}/>
                     <Route path="/ProductCard" exact component={ProductCard}/>
+                    <Route path="/fill30000" exact component={test30k}/>
+                  
                 </Switch>
             </BrowserRouter>              
           );
