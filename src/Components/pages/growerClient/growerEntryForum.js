@@ -8,7 +8,7 @@ class dataEntryTest extends React.Component {
 			productName: '',
 			companyName: '',
 			email: '',
-			havestDate: '',
+			harvestDate: '',
 			strand: '',
 			numberOfUnit: '',
 			thc: '',
@@ -77,7 +77,7 @@ class dataEntryTest extends React.Component {
 		fetch(`/api/growerData?productName=${encodeURIComponent(this.state.productName)}\
 								&companyName=${encodeURIComponent(this.state.companyName)}\
 								&email=${encodeURIComponent(this.state.email)}\
-								&haverstDate=${encodeURIComponent(this.state.havestDate)}\
+								&haverstDate=${encodeURIComponent(this.state.harvestDate)}\
 								&strand=${encodeURIComponent(this.state.strand)}\
 								&numberofUnits=${encodeURIComponent(this.state.numberOfUnit)}\
 								&thc=${encodeURIComponent(this.state.thc)}\
@@ -87,7 +87,7 @@ class dataEntryTest extends React.Component {
         .then(response => response.json())
 		.then(state => this.setState(state))
 		
-		console.log(this.state);
+		console.log(this.state.harvestDate);
     }
 
     render () {
