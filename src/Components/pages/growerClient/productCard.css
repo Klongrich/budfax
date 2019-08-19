@@ -1,10 +1,100 @@
 .product-card {
-	width: 250px;
-	height: 450px;
-	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	/*margin: 0 auto;*/
+
 	border-radius: 15px;
+
+	border: 2px solid red;
 }
 
-.company-info {
-	float:left;
+.thumbnail {
+	margin-top: 3px;
+	width: 96%;
+	height: 200px;
+	border-radius:15px;
+
+
+	border: 2px dashed green;
+
+}
+
+.card-container{
+	display:flex;
+	flew-direction: column;
+}
+
+.company-info-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.company-specifics-container {
+	width: 66%;
+	border: 2px solid grey;
+}
+
+
+.w3-card {
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+	border: 2px solid black;
+}
+
+.w3-container{
+	width: 100%;
+	height: 100%;
+	border: 2px dotted blue;
+}
+
+.temporary {
+	border: 2px dotted orange;
+	height:520px;
+	width: 340px;
+}
+
+.company-logo {
+	width: 33%;
+	height: 33%;
+	margin: 0 auto;
+	padding-top: 5px;
+}
+
+.product-name{
+	border: 1px solid green;
+	font-size: 18px;
+	margin-top: 5px;
+}
+
+.company-name{
+	border: 1px solid pink;
+	font-size: 14px;
+}
+
+.bud-stat-box {
+	margin: 5px 5px;
+	border-radius: 15px;
+	border: 2px solid black;
+	padding: 5px;
+	height: 33%;
+	width: %;
+}
+
+.bud-stats-big-container {
+	width: 100%;
+	height: 45%;
+	border: 2px dashed black;
+	display: flex;
+	flex-direction: row;
+}
+
+.bud-stats-container {
+	display: flex;
+	flew-wrap: wrap;
+	flex-direction: column;
+	margin: 2px;
+	width: 99%;
+	height: 98%;
+	border: 2px solid purple;
 }
