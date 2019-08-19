@@ -1,13 +1,4 @@
-.product-card-thumbnail {
-	height: 0 auto;
-	width: 0 auto;
-
-}
-
-#product-card-image {
-	border: 2px solid rgb(49,0,255);
-	width: 240px;
-	height: 200px;
-	margin-top: 15px;
+.product-thumbnail{
+	margin-top: 10px;
 	border-radius: 15px;
 }

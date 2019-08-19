@@ -14,7 +14,7 @@ class dataEntryTest extends React.Component {
 			thc: '',
 			thca: '',
 			cbd: '',
-			uniqueID: '420'
+			uniqueID: '410'
 		};
 
 		this.handleChange1 = this.handleChange1.bind(this);
@@ -87,7 +87,7 @@ class dataEntryTest extends React.Component {
         .then(response => response.json())
 		.then(state => this.setState(state))
 		
-		console.log(this.state.harvestDate);
+		console.log(this.state);
     }
 
     render () {
@@ -138,6 +138,7 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="numberOfUnit"
+	                min="0"
 	                type="number"
 	                value={this.state.numberOfUnit}
 	                onChange={this.handleChange5}
@@ -146,6 +147,9 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="thc"
+	                step="0.01"
+	                min="0.00"
+	                max="100.00"
 	                type="number"
 	                value={this.state.thc}
 	                onChange={this.handleChange6}
@@ -154,6 +158,9 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="thca"
+	                step="0.01"
+	                min="0.00"
+	                max="100.00"
 	                type="number"
 	                value={this.state.thca}
 	                onChange={this.handleChange7}
@@ -162,6 +169,9 @@ class dataEntryTest extends React.Component {
 	                <input
 	                class="data-entry-input"
 	                id="cbd"
+	                step="0.01"
+	                min="0.00"
+	                max="100.00"
 	                type="number"
 	                value={this.state.cbd}
 	                onChange={this.handleChange8}
