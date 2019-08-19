@@ -14,7 +14,7 @@ class dataEntryTest extends React.Component {
 			thc: '',
 			thca: '',
 			cbd: '',
-			uniqueID: '7144'
+			uniqueID: '420'
 		};
 
 		this.handleChange1 = this.handleChange1.bind(this);
