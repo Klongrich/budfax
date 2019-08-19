@@ -92,9 +92,9 @@ class dataEntryTest extends React.Component {
 
     render () {
         return (
-            <div class="grower-data-entry-container">
+            <div className="grower-data-entry-container">
 	            <form className="grower-data-entry-form" onSubmit={this.handleSubmit}>
-	                <label class="data-entry-label" htmlFor="productName">Enter your product name: </label>
+	                <label className="data-entry-label" htmlFor="productName">Enter your product name: </label>
 	                <input
 	                class="data-entry-input"
 	                id="productName"
@@ -102,7 +102,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.productName}
 	                onChange={this.handleChange1}
 	                />
-	                <label class="data-entry-label" htmlFor="companyName">Enter your company name: </label>
+	                <label className="data-entry-label" htmlFor="companyName">Enter your company name: </label>
 	                <input
 	                class="data-entry-input"
 	                id="companyName"
@@ -110,7 +110,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.companyName}
 	                onChange={this.handleChange2}
 	                />
-	                <label class="data-entry-label" htmlFor="productImage">Attach an image: </label>
+	                <label clasName="data-entry-label" htmlFor="productImage">Attach an image: </label>
 	                <input
 	                class="data-entry-input"
 	                id="productImage"
@@ -118,7 +118,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.productImage}
 	                onChange={this.handleChange10}
 	                />
-	                <label class="data-entry-label" htmlFor="havestDate">Enter your havest date: </label>
+	                <label className="data-entry-label" htmlFor="havestDate">Enter your havest date: </label>
 	                <input
 	                class="data-entry-input"
 	                id="harvestDate"
@@ -126,7 +126,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.harvestDate}
 	                onChange={this.handleChange3}
 	                />
-	                <label class="data-entry-label" htmlFor="strand">Enter your strand: </label>
+	                <label className="data-entry-label" htmlFor="strand">Enter your strand: </label>
 	                <input
 	                class="data-entry-input"
 	                id="strand"
@@ -134,7 +134,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.strand}
 	                onChange={this.handleChange4}
 	                />
-	                <label class="data-entry-label" htmlFor="numberOfUnit">Enter your number of units: </label>
+	                <label className="data-entry-label" htmlFor="numberOfUnit">Enter your number of units: </label>
 	                <input
 	                class="data-entry-input"
 	                id="numberOfUnit"
@@ -142,7 +142,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.numberOfUnit}
 	                onChange={this.handleChange5}
 	                />
-	                <label class="data-entry-label" htmlFor="thc">Enter THC percentage: </label>
+	                <label className="data-entry-label" htmlFor="thc">Enter THC percentage: </label>
 	                <input
 	                class="data-entry-input"
 	                id="thc"
@@ -150,7 +150,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.thc}
 	                onChange={this.handleChange6}
 	                />
-	                <label class="data-entry-label" htmlFor="thca">Enter THCa percentage: </label>
+	                <label className="data-entry-label" htmlFor="thca">Enter THCa percentage: </label>
 	                <input
 	                class="data-entry-input"
 	                id="thca"
@@ -158,7 +158,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.thca}
 	                onChange={this.handleChange7}
 	                />
-	                <label class="data-entry-label" htmlFor="cbd">Enter CBD percentage: </label>
+	                <label className="data-entry-label" htmlFor="cbd">Enter CBD percentage: </label>
 	                <input
 	                class="data-entry-input"
 	                id="cbd"
@@ -166,7 +166,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.cbd}
 	                onChange={this.handleChange8}
 	                />
-	                <label class="data-entry-label" htmlFor="email">Enter your email: </label>
+	                <label className="data-entry-label" htmlFor="email">Enter your email: </label>
 	                <input
 	                class="data-entry-input"
 	                id="email"
@@ -174,7 +174,7 @@ class dataEntryTest extends React.Component {
 	                value={this.state.email}
 	                onChange={this.handleChange9}
 	                />
-	                <div class="data-entry-submit-btn">
+	                <div className="data-entry-submit-btn">
 	                	<button id='btn' type="submit">Submit</button>
 	                </div>
 	            </form>

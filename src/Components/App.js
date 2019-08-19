@@ -10,7 +10,6 @@ import growerEnteryScript from '../test/growerEternyScript'
 import ProductCard from './pages/growerClient/productCard'
 
 
-
 class App extends React.Component{
 
         render () {
