@@ -1,12 +1,82 @@
 import React from 'react';
 import './growerEntryForum.css';
 
+function validate(	productName,
+				 	companyName,
+				 	productImage,
+				 	email,
+				 	harvestDate,
+				 	strand,
+				 	numberOfUnit,
+				 	thc,
+				 	thca,
+				 	cbd) {
+	return {
+		productName: validTextInput(productName),
+		companyName: validTextInput(companyName), 
+		productImage: startsWithZero(productImage),
+		email: startsWithZero(email),
+		harvestDate: validDateInput(harvestDate),
+		strand: validTextInput(strand),
+		numberOfUnit: startsWithZero(numberOfUnit),
+		thc: startsWithZero(thc),
+		thca: startsWithZero(thca),
+		cbd: startsWithZero(cbd), 
+	};
+}
+
+
+function validDateInput(e) {
+	if (e.length < 10 || e.length > 10)
+	{
+		return true;
+	}
+	else if (e.charAt(4) !== '-' || e.charAt(7) !== '-')
+	{
+		return true;
+	}
+}
+
+function validTextInput(e) {
+	if (startsWithZero(e))
+	{
+		return true;
+	}
+	else if (onlyAlphaNum(e)) 
+	{
+		return true;
+	}
+}
+
+function onlyAlphaNum(e) 
+{
+	console.log(e.length);
+	for (var i = 0; i < e.length; i++)
+	{
+		var ch = e.charAt(i);
+		console.log(ch);
+		console.log(i);
+		if (!((ch >= "a" && ch <= "z") || (ch >= "A" && ch <="Z") || (ch >= "0" && ch <= "9") || ch === ' ')) {	
+			console.log("FU");
+			return true;
+		}
+	}
+	return false;
+}
+
+function startsWithZero(e) {
+ 		if (e.charAt(0) === '0'){
+ 			return true;
+ 		}
+}
+
 class dataEntryTest extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			productName: '',
 			companyName: '',
+			productImage: '',
 			email: '',
 			harvestDate: '',
 			strand: '',
@@ -90,51 +160,86 @@ class dataEntryTest extends React.Component {
 		console.log(this.state);
     }
 
+    canBeSubmitted() {
+    	const errors = validate(this.state.productName,
+				 				this.state.companyName,
+				 				this.state.productImage,
+				 				this.state.email,
+				 				this.state.harvestDate,
+				 				this.state.strand,
+				 				this.state.numberOfUnit,
+				 				this.state.thc,
+				 				this.state.thca,
+				 				this.state.cbd);
+    	const isDisabled = Object.keys(errors).some(x => errors[x]);
+    	return !isDisabled;
+ 	}
+
     render () {
+    	const errors = validate(this.state.productName,
+					 				this.state.companyName,
+					 				this.state.productImage,
+					 				this.state.email,
+					 				this.state.harvestDate,
+					 				this.state.strand,
+					 				this.state.numberOfUnit,
+					 				this.state.thc,
+					 				this.state.thca,
+					 				this.state.cbd);
+    	const isDisabled = Object.keys(errors).some(x => errors[x]);
         return (
             <div className="grower-data-entry-container">
-	            <form className="grower-data-entry-form" onSubmit={this.handleSubmit}>
-	                <label className="data-entry-label" htmlFor="productName">Enter your product name: </label>
+	            <form onSubmit={this.handleSubmit} className="grower-data-entry-form" onSubmit={this.handleSubmit}>
+	                <label id={errors.productName ? "error" : ""} className="data-entry-label" htmlFor="productName">Enter your product name: </label>
 	                <input
 	                class="data-entry-input"
 	                id="productName"
 	                type="text"
+	                maxlength="32"
 	                value={this.state.productName}
 	                onChange={this.handleChange1}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="companyName">Enter your company name: </label>
+	                <label /*id={errors.companyName ? "error" : ""}*/ className="data-entry-label" htmlFor="companyName">Enter your company name: </label>
 	                <input
 	                class="data-entry-input"
+	                maxlength="32"
 	                id="companyName"
 	                type="text"
 	                value={this.state.companyName}
 	                onChange={this.handleChange2}
+	                required
 	                />
-	                <label clasName="data-entry-label" htmlFor="productImage">Attach an image: </label>
+	                <label /*id={errors.productImage ? "error" : ""}*/ clasName="data-entry-label" htmlFor="productImage">Attach an image: </label>
 	                <input
 	                class="data-entry-input"
 	                id="productImage"
 	                type="file"
 	                value={this.state.productImage}
 	                onChange={this.handleChange10}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="havestDate">Enter your havest date: </label>
+	                <label /*id={errors.harvestDate ? "error" : ""}*/ className="data-entry-label" htmlFor="harvestDate">Enter your harvest date: </label>
 	                <input
+	                required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
 	                class="data-entry-input"
 	                id="harvestDate"
+	                min="2010-01-01"
 	                type="date"
 	                value={this.state.harvestDate}
 	                onChange={this.handleChange3}
 	                />
-	                <label className="data-entry-label" htmlFor="strand">Enter your strand: </label>
+	                <label /*id={errors.strand ? "error" : ""}*/ className="data-entry-label" htmlFor="strand">Enter your strand: </label>
 	                <input
 	                class="data-entry-input"
+	                maxlength="32"
 	                id="strand"
 	                type="text"
 	                value={this.state.strand}
 	                onChange={this.handleChange4}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="numberOfUnit">Enter your number of units: </label>
+	                <label /*id={errors.numberOfUnit ? "error" : ""}*/ className="data-entry-label" htmlFor="numberOfUnit">Enter your number of units: </label>
 	                <input
 	                class="data-entry-input"
 	                id="numberOfUnit"
@@ -142,10 +247,12 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.numberOfUnit}
 	                onChange={this.handleChange5}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="thc">Enter THC percentage: </label>
+	                <label  className="data-entry-label" htmlFor="thc">Enter THC percentage: </label>
 	                <input
-	                class="data-entry-input"
+	                /*className={errors.thc ? "error" : ""}*/
+	                className="data-entry-input"
 	                id="thc"
 	                step="0.01"
 	                min="0.00"
@@ -153,9 +260,11 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.thc}
 	                onChange={this.handleChange6}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="thca">Enter THCa percentage: </label>
+	                <label  className="data-entry-label" htmlFor="thca">Enter THCa percentage: </label>
 	                <input
+	                /*id={errors.thca ? "error" : ""}*/
 	                class="data-entry-input"
 	                id="thca"
 	                step="0.01"
@@ -164,10 +273,12 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.thca}
 	                onChange={this.handleChange7}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="cbd">Enter CBD percentage: </label>
+	                <label  className="data-entry-label" htmlFor="cbd">Enter CBD percentage: </label>
 	                <input
-	                class="data-entry-input"
+	                /*id={errors.cbd ? "error" : ""}*/
+	                className="data-entry-input"
 	                id="cbd"
 	                step="0.01"
 	                min="0.00"
@@ -175,17 +286,20 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.cbd}
 	                onChange={this.handleChange8}
+	                required
 	                />
-	                <label className="data-entry-label" htmlFor="email">Enter your email: </label>
+	                <label /*id={errors.email ? "error" : ""}*/ className="data-entry-label" htmlFor="email">Enter your email: </label>
 	                <input
 	                class="data-entry-input"
 	                id="email"
 	                type="email"
+	                pattern=".+@+.+."
 	                value={this.state.email}
 	                onChange={this.handleChange9}
+	                required
 	                />
 	                <div className="data-entry-submit-btn">
-	                	<button id='btn' type="submit">Submit</button>
+	                	<button disabled={isDisabled} id='btn' type="submit">Submit</button>
 	                </div>
 	            </form>
        		</div>

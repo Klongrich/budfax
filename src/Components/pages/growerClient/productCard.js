@@ -34,16 +34,16 @@ class ProductCard extends React.Component {
 		return (
 			<div className="w3-container product-card">
 
-				<div className="w3-card product-card">
+				<div className="w3-card product-card w3-display-container">
 					<div className="w3-display-container">
 						<div class="w3-display-top">
-						 	<Thumbnail className="w3-diplay-top" image={this.state.productImage} />
+						 	<Thumbnail image={this.state.productImage} />
 						</div>
 						<div class="w3-display-middleleft">
 							<CompanyLogo logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtPmtIZnhskMHYsFC8_q0-tROBG89NPaODdkPbISsWdMaPBH_X3Q" />
 						</div>
 						<div class="w3-display-middleright">
-							<ProductName className="w3-display-right"
+							<ProductName
 								product={this.state.productName}
 								company={this.state.companyName}
 							/>
