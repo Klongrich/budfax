@@ -1,0 +1,9 @@
+Check to make sure ID is specific length
+    -shouldnt be like 80 letters or 2
+
+Check to see if the ID is vaild and if not telling the user it isn't
+
+Forum submits multiple times if let open. I think this is a problem with the 
+front-end but I'm not 100% sure.
+
+Better background and logo would be nice
