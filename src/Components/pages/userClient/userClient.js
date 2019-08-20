@@ -35,10 +35,28 @@ class userClient extends React.Component{
         alert("Product Not Found");
 
         event.preventDefault();
-        fetch(`/api/clientData?ID=${encodeURIComponent(this.state.productID)}`)
+
+        /*
+        fetch(`http://localhost:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`)
         .then(response => response.json())
         .then(data => this.setState(data))
-
+        */
+        fetch(`http://localhost:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                            "Content-Type": "application/json",
+                            "Origin": "http://localhost:3000"
+                },
+                },
+                ).then(response => {
+                if (response.ok) {
+                    response.json().then(json => {
+                    this.setState(json);
+                    });
+                }
+            }).catch(error => console.error(error));
+            
         console.log(this.state)
      };
 

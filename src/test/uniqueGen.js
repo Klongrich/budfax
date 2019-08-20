@@ -6,3 +6,5 @@ var ID = function () {
   };
 
   console.log(ID());
+
+  //Write chekcs to see if there is a duplcate. 
