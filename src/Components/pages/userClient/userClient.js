@@ -41,7 +41,6 @@ class userClient extends React.Component{
         .then(response => response.json())
         .then(data => this.setState(data))
         */
-       
         fetch(`http://localhost:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`, {
                 method: 'GET',
                 headers: {
@@ -57,7 +56,7 @@ class userClient extends React.Component{
                     });
                 }
             }).catch(error => console.error(error));
-
+            
         console.log(this.state)
      };
 

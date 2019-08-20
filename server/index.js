@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pino = require('express-pino-logger')();
 var mysql = require('mysql');
 const cors = require('cors')
 
@@ -25,7 +24,6 @@ con.connect(function(err) {
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(pino);
 app.use(bodyParser.json());
 app.use(cors())
 
