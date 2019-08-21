@@ -43,7 +43,7 @@ app.get('/api/growerData', (req, res) => {
 
   const data_fields = "Name, DateListed";
 
-  console.log(uniqueID);
+  console.log(req.query.numberOfUints);
 
   res.setHeader('Content-Type', 'application/json');
 

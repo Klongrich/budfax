@@ -158,7 +158,7 @@ class dataEntryTest extends React.Component {
 								&email=${encodeURIComponent(this.state.email)}\
 								&haverstDate=${encodeURIComponent(this.state.harvestDate)}\
 								&strand=${encodeURIComponent(this.state.strand)}\
-								&numberofUnits=${encodeURIComponent(this.state.numberOfUnit)}\
+								&numberOfUints=${encodeURIComponent(this.state.numberOfUnit)}\
 								&thc=${encodeURIComponent(this.state.thc)}\
 								&thca=${encodeURIComponent(this.state.thca)}\
 								&cbd=${encodeURIComponent(this.state.cbd)}\

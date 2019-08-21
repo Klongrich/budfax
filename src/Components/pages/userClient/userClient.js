@@ -72,8 +72,6 @@ class userClient extends React.Component{
                     });
                 }
             }).catch(error => alert("Product Not Found"));
-            
-
      };
 
      
