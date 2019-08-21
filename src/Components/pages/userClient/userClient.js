@@ -4,6 +4,7 @@ import '../../../../node_modules/react-grid-layout/css/styles.css'
 import '../../../../node_modules/react-resizable/css/styles.css'
 
 import { WidthProvider, Responsive } from "react-grid-layout";
+import { async } from 'q';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 class userClient extends React.Component{
@@ -25,6 +26,23 @@ class userClient extends React.Component{
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearState = this.clearState(this);
+    }
+
+    clearState() {
+        return {
+            productID: '',
+            productName: '',
+			companyName: '',
+			email: '',
+			haverstDate: '',
+			strand: '',
+			numberOfUnits: '',
+			thc: '',
+			thca: '',
+            cbd: '',
+            pictureName: ''
+        }
     }
 
     handleChange(event){
@@ -38,6 +56,8 @@ class userClient extends React.Component{
         .then(response => response.json())
         .then(data => this.setState(data))
         */
+        
+        this.setState(this.clearState);
         fetch(`http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`, {
                 method: 'GET',
                 headers: {
@@ -47,13 +67,13 @@ class userClient extends React.Component{
                 },
                 ).then(response => {
                 if (response.ok) {
-                    response.json().then(json => {
-                    this.setState(json);
+                    response.json().then(json => { 
+                        this.setState(json);
                     });
                 }
-            }).catch(error => console.error(error));
+            }).catch(error => alert("Product Not Found"));
             
-        console.log(this.state)
+
      };
 
      
@@ -122,15 +142,13 @@ class userClient extends React.Component{
                     
                     <div key="2"> 
                         <div class="weedName">
-                             Put Name of Strain / Product here
+                                 Name of Strain
                              <p>{this.state.productName}</p>
                         </div>
                     </div>
                     
                     <div key="3"> 
                         <div class="weedInfo">
-                            Put description of weed / product here
-                            
                             <div class="one">
                                 <p>Company: {this.state.companyName}</p>
                                 <p>Email: {this.state.email}</p>
