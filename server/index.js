@@ -41,6 +41,10 @@ app.get('/api/growerData', (req, res) => {
   const pictureName = req.query.pictureName;
   const uniqueID = parseInt(req.query.uniqueID);
 
+  if (pictureName.length === 0){
+    pictureName = 'noPicture';
+  }
+
   const data_fields = "Name, DateListed";
 
   console.log(cbd);

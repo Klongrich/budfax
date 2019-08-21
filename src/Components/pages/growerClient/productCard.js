@@ -1,7 +1,4 @@
 import React from 'react';
-import Thumbnail from './productCardParts/thumbnail';
-import ProductName from './productCardParts/productName';
-import CompanyLogo from './productCardParts/companyLogo';
 import './productCard.css';
 import 'tachyons';
 import 'w3-css';
