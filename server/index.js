@@ -39,11 +39,11 @@ app.get('/api/growerData', (req, res) => {
   const thca = parseFloat(req.query.thca);
   const cbd = parseFloat(req.query.cbd);
   const pictureName = req.query.pictureName;
-  const uniqueID = parseInt(req.query.uniqueID);
+  const uniqueID = req.query.uniqueID;
 
   const data_fields = "Name, DateListed";
 
-  console.log(cbd);
+  console.log(uniqueID);
 
   res.setHeader('Content-Type', 'application/json');
 
@@ -94,7 +94,6 @@ app.get('/api/clientData', (req, res) => {
     
     console.log(result[0].productName);
   })
-
 })
 
 app.listen(3010, () =>

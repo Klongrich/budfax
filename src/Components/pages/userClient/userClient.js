@@ -32,10 +32,7 @@ class userClient extends React.Component{
      };
 
      handleSubmit(event) {
-        alert("Product Not Found");
-
         event.preventDefault();
-
         /*
         fetch(`http://localhost:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`)
         .then(response => response.json())
@@ -64,27 +61,27 @@ class userClient extends React.Component{
     render () {
 
         var lglayout = [ 
-            {i: '1', x: 2, y: 0, w: 3, h: 5},
-            {i: '2', x: 6, y: 0, w: 3, h: 2},
-            {i: '3', x: 6, y: 5, w: 3, h: 3} 
+            {i: '1', x: 2, y: 0, w: 3, h: 5, static: true},
+            {i: '2', x: 6, y: 0, w: 3, h: 2, static: true},
+            {i: '3', x: 6, y: 2, w: 3, h: 3, static: true} 
           ];
 
         var mdlayout = [
-            {i: '1', x: 0, y: 0, w: 3, h: 5},
-            {i: '2', x: 0, y: 0, w: 3, h: 2},
-            {i: '3', x: 3, y: 5, w: 3, h: 3} 
+            {i: '1', x: 0, y: 0, w: 3, h: 5, static: true},
+            {i: '2', x: 0, y: 0, w: 3, h: 2, static: true},
+            {i: '3', x: 3, y: 5, w: 3, h: 3, static: true} 
         ];
 
         var smlayout = [
-            {i: '1', x: 0, y: 0, w: 2, h: 5},
-            {i: '2', x: 3, y: 0, w: 2, h: 2},
-            {i: '3', x: 3, y: 5, w: 2, h: 3} 
+            {i: '1', x: 0, y: 0, w: 2, h: 5, static: true},
+            {i: '2', x: 3, y: 0, w: 2, h: 2, static: true},
+            {i: '3', x: 3, y: 5, w: 2, h: 3, static: true} 
         ];
 
         var xslayout = [
-            {i: '1', x: 0, y: 0, w: 2, h: 5},
-            {i: '2', x: 3, y: 0, w: 2, h: 2},
-            {i: '3', x: 3, y: 5, w: 2, h: 3} 
+            {i: '1', x: 0, y: 0, w: 2, h: 5, static: true},
+            {i: '2', x: 3, y: 0, w: 2, h: 2, static: true},
+            {i: '3', x: 3, y: 5, w: 2, h: 3, static: true} 
         ];
 
         var layouts = {lg: lglayout, md: mdlayout, sm: smlayout, xs: xslayout}
@@ -138,7 +135,7 @@ class userClient extends React.Component{
                                 <p>Company: {this.state.companyName}</p>
                                 <p>Email: {this.state.email}</p>
                                 <p>Strand: {this.state.strand}</p>
-                                <p>Haverst Date: {this.state.haverstDate}</p>
+                                <p>Haverst Date: </p>
                             </div>
 
                             <div class="two">
