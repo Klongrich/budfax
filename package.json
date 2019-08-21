@@ -1,5 +1,6 @@
 {
   "name": "budfax",
+  "homepage": "http://www.budfaxs.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,19 +12,18 @@
     "mysql-server": "^1.0.5",
     "pm2": "^3.5.1",
     "public-ip": "^3.2.0",
-    "qrcode-generator": "^1.4.3",
+    "qrcode": "^1.4.1",
     "react": "^16.9.0",
     "react-burger-menu": "^2.6.11",
-    "react-confirm-alert": "^2.4.1",
     "react-dom": "^16.9.0",
     "react-grid-layout": "^0.16.6",
-    "react-hook-form": "^3.21.19",
+    "react-router": "^3.2.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
-    "react-star-ratings": "^2.3.0",
     "tachyons": "^4.11.1",
     "uniqid": "^5.0.3",
-    "w3-css": "^4.1.0"
+    "w3-css": "^4.1.0",
+    "webpack": "^4.39.1"
   },
   "scripts": {
     "server": "node-env-run server --exec nodemon | pino-colada",

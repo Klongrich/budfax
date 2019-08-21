@@ -4,6 +4,7 @@ import '../../../../node_modules/react-grid-layout/css/styles.css'
 import '../../../../node_modules/react-resizable/css/styles.css'
 
 import { WidthProvider, Responsive } from "react-grid-layout";
+import { async } from 'q';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 class userClient extends React.Component{
@@ -25,6 +26,23 @@ class userClient extends React.Component{
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearState = this.clearState(this);
+    }
+
+    clearState() {
+        return {
+            productID: '',
+            productName: '',
+			companyName: '',
+			email: '',
+			haverstDate: '',
+			strand: '',
+			numberOfUnits: '',
+			thc: '',
+			thca: '',
+            cbd: '',
+            pictureName: ''
+        }
     }
 
     handleChange(event){
@@ -32,15 +50,14 @@ class userClient extends React.Component{
      };
 
      handleSubmit(event) {
-        alert("Product Not Found");
-
         event.preventDefault();
-
         /*
         fetch(`http://localhost:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`)
         .then(response => response.json())
         .then(data => this.setState(data))
         */
+        
+        this.setState(this.clearState);
         fetch(`http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`, {
                 method: 'GET',
                 headers: {
@@ -50,13 +67,11 @@ class userClient extends React.Component{
                 },
                 ).then(response => {
                 if (response.ok) {
-                    response.json().then(json => {
-                    this.setState(json);
+                    response.json().then(json => { 
+                        this.setState(json);
                     });
                 }
-            }).catch(error => console.error(error));
-            
-        console.log(this.state)
+            }).catch(error => alert("Product Not Found"));
      };
 
      
@@ -64,27 +79,27 @@ class userClient extends React.Component{
     render () {
 
         var lglayout = [ 
-            {i: '1', x: 2, y: 0, w: 3, h: 5},
-            {i: '2', x: 6, y: 0, w: 3, h: 2},
-            {i: '3', x: 6, y: 5, w: 3, h: 3} 
+            {i: '1', x: 2, y: 0, w: 3, h: 5, static: true},
+            {i: '2', x: 6, y: 0, w: 3, h: 2, static: true},
+            {i: '3', x: 6, y: 2, w: 3, h: 3, static: true} 
           ];
 
         var mdlayout = [
-            {i: '1', x: 0, y: 0, w: 3, h: 5},
-            {i: '2', x: 0, y: 0, w: 3, h: 2},
-            {i: '3', x: 3, y: 5, w: 3, h: 3} 
+            {i: '1', x: 0, y: 0, w: 3, h: 5, static: true},
+            {i: '2', x: 0, y: 0, w: 3, h: 2, static: true},
+            {i: '3', x: 3, y: 5, w: 3, h: 3, static: true} 
         ];
 
         var smlayout = [
-            {i: '1', x: 0, y: 0, w: 2, h: 5},
-            {i: '2', x: 3, y: 0, w: 2, h: 2},
-            {i: '3', x: 3, y: 5, w: 2, h: 3} 
+            {i: '1', x: 0, y: 0, w: 2, h: 5, static: true},
+            {i: '2', x: 3, y: 0, w: 2, h: 2, static: true},
+            {i: '3', x: 3, y: 5, w: 2, h: 3, static: true} 
         ];
 
         var xslayout = [
-            {i: '1', x: 0, y: 0, w: 2, h: 5},
-            {i: '2', x: 3, y: 0, w: 2, h: 2},
-            {i: '3', x: 3, y: 5, w: 2, h: 3} 
+            {i: '1', x: 0, y: 0, w: 2, h: 5, static: true},
+            {i: '2', x: 3, y: 0, w: 2, h: 2, static: true},
+            {i: '3', x: 3, y: 5, w: 2, h: 3, static: true} 
         ];
 
         var layouts = {lg: lglayout, md: mdlayout, sm: smlayout, xs: xslayout}
@@ -125,20 +140,18 @@ class userClient extends React.Component{
                     
                     <div key="2"> 
                         <div class="weedName">
-                             Put Name of Strain / Product here
+                                 Name of Strain
                              <p>{this.state.productName}</p>
                         </div>
                     </div>
                     
                     <div key="3"> 
                         <div class="weedInfo">
-                            Put description of weed / product here
-                            
                             <div class="one">
                                 <p>Company: {this.state.companyName}</p>
                                 <p>Email: {this.state.email}</p>
                                 <p>Strand: {this.state.strand}</p>
-                                <p>Haverst Date: {this.state.haverstDate}</p>
+                                <p>Haverst Date: </p>
                             </div>
 
                             <div class="two">

@@ -39,7 +39,7 @@ app.get('/api/growerData', (req, res) => {
   const thca = parseFloat(req.query.thca);
   const cbd = parseFloat(req.query.cbd);
   const pictureName = req.query.pictureName;
-  const uniqueID = parseInt(req.query.uniqueID);
+  const uniqueID = req.query.uniqueID;
 
   if (pictureName.length === 0){
     pictureName = 'noPicture';
@@ -47,7 +47,7 @@ app.get('/api/growerData', (req, res) => {
 
   const data_fields = "Name, DateListed";
 
-  console.log(cbd);
+  console.log(req.query.numberOfUints);
 
   res.setHeader('Content-Type', 'application/json');
 
@@ -98,7 +98,6 @@ app.get('/api/clientData', (req, res) => {
     
     console.log(result[0].productName);
   })
-
 })
 
 app.listen(3010, () =>

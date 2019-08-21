@@ -1,7 +1,9 @@
 import React from 'react';
+import QRCode from 'qrcode';
 import 'uniqid';
 import 'js-sha256';
 import './growerEntryForum.css';
+
 
 
 function validate(	productName,
@@ -73,7 +75,12 @@ function startsWithZero(e) {
  		}
 }
 
-
+var ID = function () {
+    // Math.random should be unique because of its seeding algorithm.
+    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+    // after the decimal.
+    return Math.random().toString(36).substr(2, 9);
+};
 
 class dataEntryTest extends React.Component {
 	
@@ -96,7 +103,8 @@ class dataEntryTest extends React.Component {
 			thc: '',
 			thca: '',
 			cbd: '',
-			uniqueID: hash.update(uniqid()+timestamp).hex()
+			//uniqueID: hash.update(uniqid()+timestamp).hex()
+			uniqueID: ID()
 		};
 
 		this.handleChange1 = this.handleChange1.bind(this);
@@ -166,7 +174,7 @@ class dataEntryTest extends React.Component {
 								&email=${encodeURIComponent(this.state.email)}\
 								&haverstDate=${encodeURIComponent(this.state.harvestDate)}\
 								&strand=${encodeURIComponent(this.state.strand)}\
-								&numberofUnits=${encodeURIComponent(this.state.numberOfUnit)}\
+								&numberOfUints=${encodeURIComponent(this.state.numberOfUnit)}\
 								&thc=${encodeURIComponent(this.state.thc)}\
 								&thca=${encodeURIComponent(this.state.thca)}\
 								&cbd=${encodeURIComponent(this.state.cbd)}\
@@ -176,8 +184,15 @@ class dataEntryTest extends React.Component {
 		
 		console.log(this.state);
 		alert("Form Submitted");
+		QRCode.toDataURL(this.state.uniqueID)
+    	  .then(url => {
+    	    console.log(url)
+    	})
+    	  .catch(err => {
+    	    console.error(err)
+    	})
     }
-
+    
     canBeSubmitted() {
     	const errors = validate(this.state.productName,
 				 				this.state.companyName,
@@ -333,6 +348,7 @@ class dataEntryTest extends React.Component {
 	                </div>
 	            </form>
        		</div>
+       		
         );
     }
 
