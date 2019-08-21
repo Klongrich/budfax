@@ -78,6 +78,8 @@ var ID = function () {
 };
 
 class dataEntryTest extends React.Component {
+	
+
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -183,6 +185,17 @@ class dataEntryTest extends React.Component {
  	}
 
     render () {
+    	var today = new Date();
+    	var dd = today.getDate();
+    	var mm = today.getMonth() + 1;
+    	var yyyy = today.getFullYear();
+    	if (dd < 10){
+    		dd = '0'+ dd;
+    	}
+    	if (mm < 10){
+    		mm = '0' + mm;
+    	}
+    	today = yyyy + '-' + mm + '-' + dd;
     	const errors = validate(this.state.productName,
 					 				this.state.companyName,
 					 				this.state.productImage,
@@ -232,6 +245,7 @@ class dataEntryTest extends React.Component {
 	                class="data-entry-input"
 	                id="harvestDate"
 	                min="2010-01-01"
+	                max={today}
 	                type="date"
 	                value={this.state.harvestDate}
 	                onChange={this.handleChange3}
