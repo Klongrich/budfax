@@ -144,7 +144,7 @@ class dataEntryTest extends React.Component {
 
 	handleSubmit(event) {
         event.preventDefault();
-		fetch(`http://localhost:3010/api/growerData?productName=${encodeURIComponent(this.state.productName)}\
+		fetch(`http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/growerData?productName=${encodeURIComponent(this.state.productName)}\
 								&companyName=${encodeURIComponent(this.state.companyName)}\
 								&email=${encodeURIComponent(this.state.email)}\
 								&haverstDate=${encodeURIComponent(this.state.harvestDate)}\
