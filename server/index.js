@@ -100,6 +100,24 @@ app.get('/api/clientData', (req, res) => {
   })
 })
 
+
+app.get('/api/signUp', (req, res) => {
+
+  const username = req.query.username
+  const password = req.query.password
+
+  /*
+  var sql = "INSERT INTO"
+
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Success Mother Fucker");
+  })
+  */
+
+
+})
+
 app.listen(3010, () =>
   console.log('Express server is running on localhost:3010')
 );

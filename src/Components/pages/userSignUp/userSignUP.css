@@ -1,0 +1,28 @@
+
+.container-signup-forum{
+    align-content: center;
+    margin-left:100px;
+}
+
+.username{
+    margin-top:60px;
+    margin-left:320px;
+}
+
+.username input{
+    margin-top:25px;
+}
+
+.password{
+    margin-top:24px;
+    margin-left:323px;
+}
+.data_submit_button{
+    margin-top:30px;
+    margin-left:140px;
+    margin-bottom: 25px;
+}
+
+.data_submit_button button{
+    width: 235px;
+}
