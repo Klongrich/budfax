@@ -10,11 +10,11 @@ class Header extends React.Component{
             <div class="NavBar">
                 <Menu>
                   <div class="work"><a id="home" className="menu-item" href="/">UserClient</a></div>
-                  <a id="about" className="menu-item" href="/datasubmissiontest"> Node.js</a>
-                  <a id="dataEntryTest" className="menu-item" href="/dataEntryTest"> dataEntryTest</a>
-                  <a id="growerEntryScript" className="menu-item" href="/growerEnteryScript"> dataEntryScript</a>
-                  <a id="Product Card" className="product-card" href="/ProductCard">Product Card </a>
-                  <a id="Product Card" className="product-card" href="/fill30000">Test 30k </a>
+                  <a id="about" className="menu-item" href="/dataEntryTest"> GrowerClient</a>
+                  <a id="landing Page" className="lading page" href="/landingPage">Landing Page</a>
+                  <a id="dataEntryTest" className="menu-item" href="/growerEnteryScript"> dataEntryTest</a>
+                  <a id="userSignUpTest" className="signUpTest" href="/userSignUpTest">userSignUpTest</a>
+                  <a id="Product Card" className="product-card" href="/ProductCard">Product Card</a>
                 </Menu>
             </div>
 
