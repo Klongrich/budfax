@@ -42,7 +42,7 @@ class userSignUpTest extends React.Component {
                     id="username"
                     type="text"
                     value={this.state.username}
-                    onChange={this.handleChange}
+                    onChange={this.handleChangeUsername}
                     />
                 </form>
                 </div>
@@ -54,7 +54,7 @@ class userSignUpTest extends React.Component {
                     id="password"
                     type="text"
                     value={this.state.password}
-                    onChange={this.handleChange}
+                    onChange={this.handleChangePassword}
                     />
                     <div class="data_submit_button">
                         <button id="info_submit" type="submit">Submit</button>
