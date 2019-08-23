@@ -29,6 +29,8 @@ const QrWrapper = styled.div`
     height: 150px;
     width: 150px;
     margin-top: 100px;
+    color: white;
+    font-size: 100px;
 `;
 
 const Input = styled.input`
@@ -45,8 +47,8 @@ const LandingPage = () => {
                 <LogoWithTextHorizontal height="42px" width="42px" />
             </Header>
             <Body>
-                <QrWrapper /> {/* Put Logic Here*/}
-                <Input />
+                <QrWrapper>QR</QrWrapper> {/* Put Logic Here*/}
+                <Input placeholder="Product Id Here" />
             </Body>
         </>
     );
