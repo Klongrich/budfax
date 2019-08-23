@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { LogoWithTextHorizontal } from "../../Components/Logos/LogoWithTextHorizontal";
 import { Search } from "styled-icons/octicons/Search";
 
-// Styles are here temporarily. I'm too lazy to switch tabs
+// ----------------------------------   Styles are here temporarily. I'm too lazy to switch tabs -----------------------------------------------
 
 const Body = styled.div`
     height: 100%;
@@ -18,7 +18,7 @@ const Body = styled.div`
 `;
 
 const Header = styled.div`
-    z-index: 7;
+    z-index: 2;
     height: 72px;
     width: 100%;
     background-color: white;

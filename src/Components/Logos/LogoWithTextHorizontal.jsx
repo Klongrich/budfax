@@ -9,8 +9,8 @@ const StyledLogoWithTextHorizontal = styled.div`
 `;
 const LogoText = styled.h1`
     color: #43a13b;
-    font-size: 30px;
-    line-height: 26px;
+    font-size: 42px;
+    line-height: 32px;
     margin: 0px 0px 0px 5px;
 `;
 
