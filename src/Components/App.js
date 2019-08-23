@@ -16,7 +16,7 @@ class App extends React.Component {
         const testy = "penis";
         return (
             <BrowserRouter>
-                {/* <NavBar /> */}
+                <NavBar />
                 <Switch>
                     <Route path="/" exact component={LandingPage} />
                     <Route
