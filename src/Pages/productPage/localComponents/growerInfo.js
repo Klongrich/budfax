@@ -19,7 +19,7 @@ const Title = styled.h1`
 	font-family: roboto;
 `;
 
-const Strand = styled.h2`
+const Subject = styled.h1`
 	font-size: 1em;
 	text-align: center;
 `;
@@ -38,7 +38,7 @@ class GrowerInfo extends React.Component {
 		this.state = {
             productName: 'OG KUSH',
 			companyName: '',
-			haverstDate: '',
+			harvestDate: '02-03-2019',
 			strand: 'Sativa',
 			thc: '80',
 			cbd: '20'
@@ -48,11 +48,12 @@ class GrowerInfo extends React.Component {
 		return (
 			<Body>
 				<Title>{this.state.productName}</Title>
-				<Strand>{this.state.strand}</Strand>
+				<Subject>{this.state.strand}</Subject>
 				<div className="stats-container">
 					<Stats>THC: {this.state.thc}%</Stats>
 					<Stats> CBD: {this.state.cbd}%</Stats>
 				</div>
+				<Subject>Packaged On:  <span><br/></span>{this.state.harvestDate}</Subject>
 				
 			</Body>
 		);
