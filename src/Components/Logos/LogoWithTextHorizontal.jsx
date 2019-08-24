@@ -14,9 +14,9 @@ const LogoText = styled.h1`
     margin: 0px 0px 0px 5px;
 `;
 
-export const LogoWithTextHorizontal = ({ height, width }) => {
+export const LogoWithTextHorizontal = ({ height, width, onClick }) => {
     return (
-        <StyledLogoWithTextHorizontal>
+        <StyledLogoWithTextHorizontal onClick={onClick}>
             <Logo height={height} width={width} />
             <LogoText>BudFax</LogoText>
         </StyledLogoWithTextHorizontal>

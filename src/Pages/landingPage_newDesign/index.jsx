@@ -95,7 +95,11 @@ const LandingPage = () => {
     return (
         <>
             <Header>
-                <LogoWithTextHorizontal height="42px" width="42px" />
+                <LogoWithTextHorizontal
+                    height="42px"
+                    width="42px"
+                    onClick={() => setProductInfo()}
+                />
             </Header>
             <Body>
                 {productInfo ? (
