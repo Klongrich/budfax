@@ -34,6 +34,7 @@ class QrScanner extends React.Component {
             cbd: '',
             pictureName: ''
         }
+        this.baseState = this.state;
 		this.handleScan = this.handleScan.bind(this);
 	}
 
@@ -45,23 +46,32 @@ class QrScanner extends React.Component {
 			})
 		}
 		console.log(data);
-	
+		
+		if (this.state.uniqueID.length > 0){
+	        fetch(`http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/clientData?ID=${encodeURIComponent(this.state.uniqueID)}`, {
+	                method: 'GET',
+	                headers: {
+	                    Accept: 'application/json',
+	                            "Content-Type": "application/json",
+	                },
+	                },
+	                ).then(response => {
+	                if (response.ok) {
+	                    response.json().then(json => { 
+	                        this.setState(json);
+	                    });
+	                }
+	            }).catch(error => console.log("Product Not Found"));
+	            console.log(this.state);
+	            console.log("DATABASE CALL");
+	            this.resetState();
 
-        fetch(`http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/clientData?ID=${encodeURIComponent(this.state.uniqueID)}`, {
-                method: 'GET',
-                headers: {
-                    Accept: 'application/json',
-                            "Content-Type": "application/json",
-                },
-                },
-                ).then(response => {
-                if (response.ok) {
-                    response.json().then(json => { 
-                        this.setState(json);
-                    });
-                }
-            }).catch(error => console.log("Product Not Found"));
-            console.log(this.state)
+	    }
+	}
+
+
+	resetState = () => {
+		this.setState(this.baseState);
 	}
 
 	handleError = err => {
@@ -77,7 +87,7 @@ class QrScanner extends React.Component {
 			<Body>
 				<QrReader
 					className="qr-reader"
-					delay={500} // 3 seconds
+					delay={500} // 5 seconds
 					onError={this.handleError}
 					onScan={this.handleScan}
 					style={previewStyle}
