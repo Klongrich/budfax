@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { LogoWithTextHorizontal } from "../../Components/Logos/LogoWithTextHorizontal";
 import { Input } from "./LocalComponents/Input";
 
+import QrScanner from "../qr_components/QrScanner";
+
 // ----------------------------------   Styles are here temporarily. I'm too lazy to switch tabs -----------------------------------------------
 
 const Body = styled.div`
@@ -15,6 +17,7 @@ const Body = styled.div`
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
+    border: 1px solid black;
 `;
 
 const Header = styled.div`
@@ -28,9 +31,9 @@ const Header = styled.div`
 
 const QrWrapper = styled.div`
     background-color: #1de8b5;
-    border-radius: 5px;
-    height: 200px;
-    width: 200px;
+    border-radius: 15px;
+    height: 250px;
+    width: 250px;
     margin-top: 75px;
     color: white;
     font-size: 100px;
@@ -47,8 +50,10 @@ const LandingPage = () => {
                 <LogoWithTextHorizontal height="42px" width="42px" />
             </Header>
             <Body>
-                <QrWrapper>QR{/* Logic goes here*/}</QrWrapper>
-                <Input />
+                <QrWrapper>
+                    <QrScanner/>
+                </QrWrapper>
+                <Input/>
             </Body>
         </>
     );

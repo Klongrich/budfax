@@ -13,7 +13,6 @@ import userSignUpTest from "./pages/userSignUp/userSignUp";
 
 class App extends React.Component {
     render() {
-        const testy = "penis";
         return (
             <BrowserRouter>
                 <NavBar />
@@ -42,7 +41,6 @@ class App extends React.Component {
                         exact
                         component={userSignUpTest}
                     />
-                    <Route path="/fill30000" exact component={test30k} />
                 </Switch>
             </BrowserRouter>
         );

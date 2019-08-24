@@ -10,6 +10,7 @@ const TopBar = styled.div`
     background-color: white;
     box-shadow: 0 0 8px black;
     position: absolute;
+    background image: 'Components/Logos/LogoWithTextHorizontal.jsx'
 `;
 
 const Header = () => {
