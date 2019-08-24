@@ -10,12 +10,13 @@ import ProductCard from "./pages/growerClient/productCard";
 import test30k from "../test/filll30000";
 import LandingPage from "../Pages/landingPage_newDesign";
 import userSignUpTest from "./pages/userSignUp/userSignUp";
+import ProductPage from "../Pages/productPage/productPage";
 
 class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <NavBar />
+
                 <Switch>
                     <Route path="/" exact component={LandingPage} />
                     <Route
@@ -36,6 +37,7 @@ class App extends React.Component {
                     />
                     <Route path="/ProductCard" exact component={ProductCard} />
                     <Route path="/landingPage" exact component={LandingPage} />
+		    <Route path="/productpage" exact component={ProductPage} />
                     <Route
                         path="/userSignUpTest"
                         exact

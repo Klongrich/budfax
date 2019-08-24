@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import './QrScanner.css';
-
 // https://www.npmjs.com/package/react-qr-reader | only works with localhost and https
 import QrReader from 'react-qr-reader'; 
 
@@ -18,7 +17,6 @@ const Body = styled.div`
 `;
 
 class QrScanner extends React.Component {
-	
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -34,11 +32,10 @@ class QrScanner extends React.Component {
             cbd: '',
             pictureName: ''
         }
+        this.delay = 500;
         this.baseState = this.state;
 		this.handleScan = this.handleScan.bind(this);
 	}
-
-	
 	handleScan = data => {
 		if (data) {
 			this.setState({
@@ -63,21 +60,16 @@ class QrScanner extends React.Component {
 	                }
 	            }).catch(error => console.log("Product Not Found"));
 	            console.log(this.state);
-	            console.log("DATABASE CALL");
-	            this.resetState();
+	            this.stopScan();
 
 	    }
 	}
-
-
-	resetState = () => {
-		this.setState(this.baseState);
+	stopScan = () => {
+		this.delay = 100000000;
 	}
-
 	handleError = err => {
 		console.log(err)
 	}
-
 	render() {
 		const previewStyle ={
 			width: 250,
@@ -87,15 +79,13 @@ class QrScanner extends React.Component {
 			<Body>
 				<QrReader
 					className="qr-reader"
-					delay={500} // 5 seconds
+					delay={this.delay} // 5 seconds
 					onError={this.handleError}
 					onScan={this.handleScan}
 					style={previewStyle}
 				/>
 			</Body>
-
 		)
 	}
 }
-
 export default QrScanner;

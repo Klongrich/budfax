@@ -14,8 +14,10 @@ const Body = styled.div`
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center !important;
+    margin-top: 100px;
+    justify-content: top !important;
     align-items: left !important;
+    border: 1px solid red;
 `;
 
 const Header = styled.div`
