@@ -2,61 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { LogoWithTextHorizontal } from "../../Components/Logos/LogoWithTextHorizontal";
 import { Input } from "./LocalComponents/Input";
-
-import QrScanner from "../qr_components/QrScanner";
-
-const ProductPage = ({ productInfo }) => {
-    return (
-        <div>
-            {Object.values(productInfo).map(info => {
-                return <h1>{info}</h1>;
-            })}
-        </div>
-    );
-};
-
-// ----------------------------------   Styles are here temporarily. I'm too lazy to switch tabs -----------------------------------------------
-
-const Body = styled.div`
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    z-index: 0;
-    padding-top: 72px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center !important;
-    align-items: center !important;
-    border: 1px solid black;
-    overflow: scroll;
-`;
-
-const Header = styled.div`
-    z-index: 2;
-    height: 72px;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 0 0 #00b585;
-    position: absolute;
-`;
-
-const QrWrapper = styled.div`
-    background-color: #1de8b5;
-    border-radius: 15px;
-    height: 250px;
-    width: 250px;
-    margin-top: 75px;
-    color: white;
-    font-size: 100px;
-    position: relative;
-    /* placeholder */
-    display: flex;
-    justify-content: center;
-`;
+import { Body, Header } from "../UniversalStyles/Theme";
+import QrScanner from "./LocalComponents/QrScanner";
+import ProductPage from "../ProductPage";
 
 const LandingPage = () => {
-    const [productInfo, setProductInfo] = useState();
+    const [productInfo, setProductInfo] = useState(); // look into react hooks if you want to better understand this black magic wizardry
     const [productId, setProductId] = useState("");
 
     const onProductIdChange = event => {
@@ -98,18 +49,16 @@ const LandingPage = () => {
                 <LogoWithTextHorizontal
                     height="42px"
                     width="42px"
-                    onClick={() => setProductInfo()}
+                    onClick={() => setProductInfo()} // Clears product info state so that it can redirect. check out this component
                 />
             </Header>
             <Body>
-                {productInfo ? (
+                {productInfo ? ( // if theres product info, load the product page. if not load landing page. Will probably refactor later
                     <ProductPage productInfo={productInfo} />
                 ) : (
                     <>
-                        <QrWrapper>
-                            <QrScanner />
-                        </QrWrapper>
-                        <Input
+                        <QrScanner />
+                        <Input // Passes onChange and onSubmit logic down to input component. Need to do the same thing for the QR Component, instead of uniqueId probably use product id
                             value={productId}
                             onChange={onProductIdChange}
                             onSubmit={onProductIdSubmit}

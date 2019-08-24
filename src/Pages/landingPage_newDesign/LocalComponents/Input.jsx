@@ -37,6 +37,7 @@ const SearchIcon = styled(Search)`
 `;
 
 export const Input = ({ value, onChange, onSubmit }) => {
+    // destructuring props, could also look like ->  Input = (props) => onSubmit={props.onSubmit} --- destructuring just looks cleaner
     return (
         <InputWrapper onSubmit={onSubmit}>
             <InputField
