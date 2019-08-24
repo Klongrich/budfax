@@ -1,9 +1,20 @@
 .landing-page-container{
-    background-color: grey;
+    background-color:lightgreen;
     margin-top:-10px;
     text-align: center;
 }
 
+.toppart{
+    padding-top:30px;
+}
+
 .descript{
-    margin-top:50px;
+    margin-top:0px;
+    padding-left: 0px;
+    padding-right: 100px;
+    padding-top: 400px;
+    background-image: url('./fatdab.jpg');
+    background-repeat: no-repeat;
+    height: 800px;
+    margin-left: 150px;
 }
