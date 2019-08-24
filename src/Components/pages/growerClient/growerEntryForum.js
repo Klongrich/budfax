@@ -82,7 +82,7 @@ var ID = function () {
     return Math.random().toString(36).substr(2, 9);
 };
 
-class dataEntryTest extends React.Component {
+class growerDataEntry extends React.Component {
 	
 
 
@@ -187,12 +187,13 @@ class dataEntryTest extends React.Component {
 		QRCode.toDataURL(this.state.uniqueID)
     	  .then(url => {
     	    console.log(url)
+    	    window.location.href(url)
     	})
     	  .catch(err => {
     	    console.error(err)
     	})
     }
-    
+
     canBeSubmitted() {
     	const errors = validate(this.state.productName,
 				 				this.state.companyName,
@@ -242,7 +243,7 @@ class dataEntryTest extends React.Component {
 	                maxLength="32"
 	                value={this.state.productName}
 	                onChange={this.handleChange1}
-	               /// required
+	                required
 	                />
 	                <label /*id={errors.companyName ? "error" : ""}*/ className="data-entry-label" htmlFor="companyName">Enter your company name: </label>
 	                <input
@@ -252,20 +253,19 @@ class dataEntryTest extends React.Component {
 	                type="text"
 	                value={this.state.companyName}
 	                onChange={this.handleChange2}
-	                //required
+	                required
 	                />
 	                <label /*id={errors.productImage ? "error" : ""}*/ className="data-entry-label" htmlFor="productImage">Attach an image: </label>
 	                <input
 	                className="data-entry-input"
 	                id="productImage"
 	                type="file"
-	                placeHolder="Product Image"
 	                value={this.state.productImage}
 	                onChange={this.handleChange10}
 	                />
 	                <label /*id={errors.harvestDate ? "error" : ""}*/ className="data-entry-label" htmlFor="harvestDate">Enter your harvest date: </label>
 	                <input
-	               // required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+	                required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
 	                className="data-entry-input"
 	                id="harvestDate"
 	                min="2010-01-01"
@@ -282,7 +282,7 @@ class dataEntryTest extends React.Component {
 	                type="text"
 	                value={this.state.strand}
 	                onChange={this.handleChange4}
-	                //required
+	                required
 	                />
 	                <label /*id={errors.numberOfUnit ? "error" : ""}*/ className="data-entry-label" htmlFor="numberOfUnit">Enter your number of units: </label>
 	                <input
@@ -292,7 +292,7 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.numberOfUnit}
 	                onChange={this.handleChange5}
-	                //required
+	                required
 	                />
 	                <label className="data-entry-label" htmlFor="thc">Enter THC percentage: </label>
 	                <input
@@ -305,7 +305,7 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.thc}
 	                onChange={this.handleChange6}
-	               // required
+	                required
 	                />
 	                <label className="data-entry-label" htmlFor="thca">Enter THCa percentage: </label>
 	                <input
@@ -318,7 +318,7 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.thca}
 	                onChange={this.handleChange7}
-	              //  required
+	                required
 	                />
 	                <label className="data-entry-label" htmlFor="cbd">Enter CBD percentage: </label>
 	                <input
@@ -331,17 +331,17 @@ class dataEntryTest extends React.Component {
 	                type="number"
 	                value={this.state.cbd}
 	                onChange={this.handleChange8}
-	               // required
+	                required
 	                />
 	                <label /*id={errors.email ? "error" : ""}*/ className="data-entry-label" htmlFor="email">Enter your email: </label>
 	                <input
 	                className="data-entry-input"
 	                id="email"
 	                type="email"
-	                pattern=".+@+.+."
+	                pattern=".+@+.+"
 	                value={this.state.email}
 	                onChange={this.handleChange9}
-	               // required
+	                required
 	                />
 	                <div className="data-entry-submit-btn">
 	                	<button disabled={isDisabled} id='btn' >Submit</button>
@@ -354,4 +354,4 @@ class dataEntryTest extends React.Component {
 
 }
 
-export default dataEntryTest;
+export default growerDataEntry;
