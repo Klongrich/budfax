@@ -5,7 +5,8 @@ import { Search } from "styled-icons/octicons/Search";
 const InputField = styled.input`
     position: relative;
     padding: 15px 40px 15px 20px;
-    width: 20px;
+    width: 250px;
+    left: 4.2%;
     color: #525252;
     text-transform: uppercase;
     font-size: 14px;
@@ -15,10 +16,6 @@ const InputField = styled.input`
     border-radius: 5px;
     transition: width 0.4s ease;
     outline: none;
-
-    &:focus {
-        width: 200px;
-    }
 `;
 
 const InputWrapper = styled.form`
@@ -39,11 +36,16 @@ const SearchIcon = styled(Search)`
     cursor: pointer;
 `;
 
-export const Input = () => {
+export const Input = ({ value, onChange, onSubmit }) => {
     return (
-        <InputWrapper>
-            <InputField placeholder="Product Id #" />
-            <SearchIcon />
+        <InputWrapper onSubmit={onSubmit}>
+            <InputField
+                placeholder="Product Id #"
+                value={value}
+                onChange={onChange}
+                onSubmit={onSubmit}
+            />
+            <SearchIcon onClick={onSubmit} />
         </InputWrapper>
     );
 };

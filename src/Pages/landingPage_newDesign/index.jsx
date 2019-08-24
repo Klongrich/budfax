@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { LogoWithTextHorizontal } from "../../Components/Logos/LogoWithTextHorizontal";
 import { Input } from "./LocalComponents/Input";
 
 import QrScanner from "../qr_components/QrScanner";
+
+const ProductPage = ({ productInfo }) => {
+    return (
+        <div>
+            {Object.values(productInfo).map(info => {
+                return <h1>{info}</h1>;
+            })}
+        </div>
+    );
+};
 
 // ----------------------------------   Styles are here temporarily. I'm too lazy to switch tabs -----------------------------------------------
 
@@ -12,12 +22,14 @@ const Body = styled.div`
     width: 100%;
     background-color: white;
     z-index: 0;
+    padding-top: 72px;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
     border: 1px solid black;
+    overflow: scroll;
 `;
 
 const Header = styled.div`
@@ -44,16 +56,62 @@ const QrWrapper = styled.div`
 `;
 
 const LandingPage = () => {
+    const [productInfo, setProductInfo] = useState();
+    const [productId, setProductId] = useState("");
+
+    const onProductIdChange = event => {
+        setProductId(event.target.value);
+    };
+    const onProductIdSubmit = event => {
+        event.preventDefault();
+
+        // talk to server
+        fetch(
+            `http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/clientData?ID=${encodeURIComponent(
+                productId
+            )}`,
+            {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                }
+            }
+        )
+            .then(response => {
+                if (response.ok) {
+                    response.json().then(json => {
+                        setProductInfo(json);
+                        console.log(json);
+                    });
+                }
+            })
+            .catch(error => alert("Product Not Found"));
+        console.log(productInfo);
+
+        setProductId("");
+    };
+
     return (
         <>
             <Header>
                 <LogoWithTextHorizontal height="42px" width="42px" />
             </Header>
             <Body>
-                <QrWrapper>
-                    <QrScanner/>
-                </QrWrapper>
-                <Input/>
+                {productInfo ? (
+                    <ProductPage productInfo={productInfo} />
+                ) : (
+                    <>
+                        <QrWrapper>
+                            <QrScanner />
+                        </QrWrapper>
+                        <Input
+                            value={productId}
+                            onChange={onProductIdChange}
+                            onSubmit={onProductIdSubmit}
+                        />
+                    </>
+                )}
             </Body>
         </>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import LogoImage from "../../Images/Logo.png";
+import LogoImage from "../../Images/BudFax_Primary_Dark.png";
 
 const LogoStyled = styled.img`
     height: ${({ height }) => height};
