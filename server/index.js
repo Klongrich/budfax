@@ -79,15 +79,15 @@ app.get('/api/clientData', (req, res) => {
 
   con.query(getInfo, function(err, result, fields) {
     if (err) throw err;
+   
+    console.log(result);
 
-    /*
-    res.send({ productName: `${result[0].productName}` });
-    */
+    date = String(result[0].haverstDate).substring(4,15)
     
     res.send({   productName: `${result[0].productName}` ,
                                 companyName: `${result[0].companyName}` ,
                                 email: `${result[0].email}` ,
-                                haverstDate: `${result[0].haverstDate}` ,
+                                haverstDate: `${date}` ,
                                 strand: `${result[0].strand}` ,
                                 numberOfUnits: `${result[0].Units}` ,
                                 thc: `${result[0].THC}` ,
@@ -97,6 +97,9 @@ app.get('/api/clientData', (req, res) => {
                                                                             })
     
     console.log(result[0].productName);
+
+
+    console.log(String(result[0].haverstDate).substring(4,15));
   })
 })
 
@@ -108,7 +111,6 @@ app.get('/api/signUp', (req, res) => {
 
   /*
   var sql = "INSERT INTO"
-
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Success Mother Fucker");
@@ -121,5 +123,3 @@ app.get('/api/signUp', (req, res) => {
 app.listen(3010, () =>
   console.log('Express server is running on localhost:3010')
 );
-
-

@@ -58,7 +58,7 @@ class userClient extends React.Component{
         */
         
         this.setState(this.clearState);
-        fetch(`http://localhost:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`, {
+        fetch(`http://ec2-18-224-170-67.us-east-2.compute.amazonaws.com:3010/api/clientData?ID=${encodeURIComponent(this.state.productID)}`, {
                 method: 'GET',
                 headers: {
                     Accept: 'application/json',
@@ -152,7 +152,7 @@ class userClient extends React.Component{
                                 <p>Company: {this.state.companyName}</p>
                                 <p>Email: {this.state.email}</p>
                                 <p>Strand: {this.state.strand}</p>
-                                <p>Haverst Date: {this.state.haverstDate} </p>
+                                <p>Haverst Date: {this.state.haverstDate}</p>
                             </div>
 
                             <div class="two">
