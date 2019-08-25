@@ -73,9 +73,10 @@ const LandingPage = () => {
                 {productInfo ? ( // if theres product info, load the product page. if not load landing page. Will probably refactor later
                     <ProductPage productInfo={productInfo} />
                 ) : (
-                    <>
+                    <>  
+                        <h5> Scan Code Here </h5>
                         <QrScanner
-                            delay={500}
+                            delay={1000}
                             onError={handleError}
                             onScan={onQrScannerScan}
                         />

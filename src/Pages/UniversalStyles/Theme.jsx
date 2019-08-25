@@ -20,6 +20,7 @@ export const Header = styled.div`
     height: 72px;
     width: 100%;
     background-color: white;
-    box-shadow: 0 0 0 #00b585;
+   
     position: absolute;
 `;
+//  box-shadow: 0 0 0 #00b585;

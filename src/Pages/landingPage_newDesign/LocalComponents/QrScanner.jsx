@@ -21,16 +21,14 @@ const QrWrapper = styled.div`
 `;
 
 export const QrScanner = ({delay, onError, onScan}) => {
-
-        return (
-            <QrWrapper>
-                <StyledQrReader
-                    delay={delay} // 5 seconds
-                    onError={onError}
-                    onScan={onScan}
-                />
-            </QrWrapper>
-        );
-    }
-
+    return (
+        <QrWrapper>
+            <StyledQrReader
+                delay={delay} // 5 seconds
+                onError={onError}
+                onScan={onScan}
+            />
+        </QrWrapper>
+    );
+}
 export default QrScanner;
