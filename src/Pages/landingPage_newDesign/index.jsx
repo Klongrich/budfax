@@ -86,9 +86,11 @@ const LandingPage = () => {
                             onChange={onProductIdChange}
                             onSubmit={onProductIdSubmit}
                         />
-
                         <CompanyInfoPage />
+
+
                     </>
+                    
                 )}
 
                 
