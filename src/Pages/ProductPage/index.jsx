@@ -59,8 +59,8 @@ const Strand = styled.div`
 const ColumnsBud = styled.div`
 	display: flex;
 	flex-direction: row;
-	margin-left: 8%;
 	color: white;
+	justify-content: center;
 `;
 
 const ColumnsDetails = styled.div`
@@ -73,7 +73,6 @@ const ColumnsDetails = styled.div`
 //img
 const Thumbnail = styled.img` 
 	border-radius: 15px;
-	border: 2px dotted red;
 	height: auto;
 	width: 45%;
 	margin: 5px 10px;

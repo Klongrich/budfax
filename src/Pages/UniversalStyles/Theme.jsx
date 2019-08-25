@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Body = styled.div`
     height: 100%;
     width: 100%;
-    background-color: white;
+    background: linear-gradient(to right, rgb(2, 72, 2), rgb(84, 152, 0));
     z-index: 0;
     padding-top: 72px;
     position: fixed;

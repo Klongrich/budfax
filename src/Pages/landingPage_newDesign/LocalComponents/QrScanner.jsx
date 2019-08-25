@@ -5,19 +5,21 @@ import styled from "styled-components";
 import QrReader from "react-qr-reader";
 
 const StyledQrReader = styled(QrReader)`
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
 `;
 
 const QrWrapper = styled.div`
-    border-radius: 15px;
-    width: 250px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
-    border: 1px solid black;
 `;
 
 export const QrScanner = ({delay, onError, onScan}) => {

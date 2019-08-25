@@ -20,7 +20,8 @@ const InputField = styled.input`
 
 const InputWrapper = styled.form`
     position: relative;
-    margin-top: 75px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     height: 84px;
     display: flex;
     justify-content: center !important;
