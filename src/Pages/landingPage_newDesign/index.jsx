@@ -9,13 +9,10 @@ import CompanyInfoPage from "../CompanyInfoPage/companyinfo";
 import ProductNotFound from "../ProductNotFoundPage";
 
 
-const notFound = () => {
-    return <ProductNotFound/>;
-}
-
 const LandingPage = () => {
     const [productInfo, setProductInfo] = useState(); // look into react hooks if you want to better understand this black magic wizardry
     const [productId, setProductId] = useState("");
+    const [isFound, setIsFound] = useState("");
 
 
     const getData = () => {
@@ -35,11 +32,12 @@ const LandingPage = () => {
                 if (response.ok) {
                     response.json().then(json => {
                         setProductInfo(json);
+                        setIsFound(true)
                         console.log(json);
                     });
                 }
             })
-            .catch(error => notFound());
+            .catch(error => setIsFound(false));
         console.log(productInfo);
         setProductId("");
     }
@@ -68,7 +66,7 @@ const LandingPage = () => {
     };
 
     return (
-        <>
+        <div>
             <Header>
                 <LogoWithTextHorizontal
                     height="42px"
@@ -77,29 +75,30 @@ const LandingPage = () => {
                 />
             </Header>
             <Body>
-                {productInfo ? ( // if theres product info, load the product page. if not load landing page. Will probably refactor later
-                        <ProductPage productInfo={productInfo} />
-                ) : (
-                    <>  
-                        <h5> Scan Code Here </h5>
-                        <QrScanner
-                            delay={1000}
-                            onError={handleError}
-                            onScan={onQrScannerScan}
-                        />
-                        <Input // Passes onChange and onSubmit logic down to input component. Need to do the same thing for the QR Component, instead of uniqueId probably use product id
-                            value={productId}
-                            onChange={onProductIdChange}
-                            onSubmit={onProductIdSubmit}
-                        />
-                        <CompanyInfoPage />
-
-
-                    </>
-                    
-                )}
+                { isFound ? (
+                            {productInfo ? (
+                                 <ProductPage productInfo={productInfo} />
+                            ) : (
+                                <div>  
+                                    <h5> Scan Code Here </h5>
+                                    <QrScanner
+                                        delay={1000}
+                                        onError={handleError}
+                                        onScan={onQrScannerScan}
+                                    />
+                                    <Input // Passes onChange and onSubmit logic down to input component. Need to do the same thing for the QR Component, instead of uniqueId probably use product id
+                                        value={productId}
+                                        onChange={onProductIdChange}
+                                        onSubmit={onProductIdSubmit}
+                                    />
+                                    <CompanyInfoPage />
+                                </div>  
+                            )}
+                        ) : (
+                            <ProductNotFound/>
+                    )}
             </Body>
-        </>
+        </div>
     );
 };
 

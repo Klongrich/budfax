@@ -7,10 +7,15 @@ const ProductNotFoundWrapper = styled.div`
 	border: 2px solid red;
 `;
 
+const DismissBtn = styled.button`
+	
+`;
+
 export const ProductNotFound = () => {
 	return (
 		<ProductNotFoundWrapper>
 			Product not found!
+			<DismissBtn />
 		</ProductNotFoundWrapper>
 
 	);

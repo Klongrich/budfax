@@ -65,7 +65,7 @@ const ColumnsDetails = styled.div`
 //img
 const Thumbnail = styled.img` 
 	border-radius: 15px;
-	height: 45vmin;
+	height: auto;
 	width: 45vmin;
 	margin: 5% 5%;
 	color: white;

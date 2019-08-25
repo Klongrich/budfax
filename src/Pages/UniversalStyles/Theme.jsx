@@ -11,10 +11,9 @@ export const Body = styled.div`
     justify-content: center !important;
     align-items: center !important;
     border: 1px solid black;
-    ;
+    overflow: scroll;
 `;
-
-// overflow: scroll
+//overflow: scroll;
 
 export const Header = styled.div`
     z-index: 2;
