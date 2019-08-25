@@ -182,7 +182,7 @@ class dataEntryTest extends React.Component {
         .then(response => response.json())
 		.then(state => this.setState(state))
 		
-		console.log(this.state);
+		console.log(this.state.harvestDate);
 		alert("Form Submitted");
 		QRCode.toDataURL(this.state.uniqueID)
     	  .then(url => {
