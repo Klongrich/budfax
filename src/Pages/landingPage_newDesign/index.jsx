@@ -5,6 +5,7 @@ import { Input } from "./LocalComponents/Input";
 import { Body, Header } from "../UniversalStyles/Theme";
 import QrScanner from "./LocalComponents/QrScanner";
 import ProductPage from "../ProductPage";
+import CompanyInfoPage from "../CompanyInfoPage/companyinfo"
 
 
 const LandingPage = () => {
@@ -85,8 +86,15 @@ const LandingPage = () => {
                             onChange={onProductIdChange}
                             onSubmit={onProductIdSubmit}
                         />
+                        <CompanyInfoPage />
+
+
                     </>
+                    
                 )}
+
+                
+
             </Body>
         </>
     );

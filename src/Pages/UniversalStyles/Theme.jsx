@@ -6,7 +6,6 @@ export const Body = styled.div`
     background: linear-gradient(to right, rgb(2, 72, 2), rgb(84, 152, 0));
     z-index: 0;
     padding-top: 72px;
-    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
