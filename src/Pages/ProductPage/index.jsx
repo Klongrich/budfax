@@ -13,49 +13,39 @@ import './thumbnail.css';
 // thc: "",
 // thca: ""
 
-const Body = styled.div`
-    height: 100%;
+const ProductBody = styled.div`
     width: 100%;
-    background: linear-gradient(to right, rgb(2, 72, 2), rgb(84, 152, 0));
-    
-    z-index: 0;
-    padding-top: 40px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    overflow: scroll;
-    color: white;
+    height: 100vh;
 `;
 
 
 const ProductDetailsWrapper = styled.div`
     width: 55%;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: left !important;
     align-items: left !important;
-    padding: 10px;
+    padding-top: 5vw;
+    margin-left: 3vw;
     color: white;
 `;
 
 
 const ProductName = styled.div`
 	font-family: roboto;
-	font-size: 2em;
+	font-size: 3.4vmax;
 	margin: 1%;
 	color: white;
 `;
 
 const Strand = styled.div`
-	font-size: 1.25em;
+	font-size: 2.7vmax;
 	margin: 0.5%;
 	color: white;
 `;
 
-// WHY TF WONT THIS DISPLAY ITS CONTENT CENTERED
 const ColumnsBud = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -64,6 +54,8 @@ const ColumnsBud = styled.div`
 `;
 
 const ColumnsDetails = styled.div`
+	width: 100%;
+	height: 50vw;
 	display: flex;
 	flex-direction: row;
 	margin-left: 2%;
@@ -73,13 +65,15 @@ const ColumnsDetails = styled.div`
 //img
 const Thumbnail = styled.img` 
 	border-radius: 15px;
-	height: auto;
-	width: 45%;
-	margin: 5px 10px;
+	height: 45vmin;
+	width: 45vmin;
+	margin: 5% 5%;
 	color: white;
 `;
 
 const BudStatsWrapper = styled.div`
+	height: auto;
+	width: 100%;
 	margin-top: 2%;
 	justify-content: center;
 	align-items: center;
@@ -88,45 +82,59 @@ const BudStatsWrapper = styled.div`
 `;
 
 const BudStats = styled.div`
-	margin: 2px 10px;
-	font-size: 1em;
+	margin-top: 2px;
+	margin-left: 5%;
+	font-size: 2vmax;
 	text-align: right;
 	color: white;
+	font-family: roboto;
 `;	
 
 const Unit = styled.div`
-	font-size: 1em;
+	font-size: 2.5vmax;
 	color: white;
+	font-family: roboto;
+`;
+
+const DateUnit = styled.div`
+	font-size: 2vmax;
+	color: white;
+	font-family: roboto;
 `;
 
 const DescriptionBox = styled.p`
 	width: 100%;
 	height: 25%;
 	padding: 20px;
-	font-size: 14px;
+	font-size: 2vmax;
 	color: white;
+	font-family: roboto;
 `;
 
 const Verified = styled.div`
+	position: relative;
+	bottom: 0px;
 	width: 100;
 	height: 15%;
-	padding: 15px;
+	padding: 2%;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
-	color: white;
+	color: gold;
+	font-style: bold;
+	font-family: roboto;
+	font-size: 2vmax;
 `;
 
 const ProductPage = ({ productInfo }) => {
-    // Don't need to map. Create styled components in this folder, <div> <h1>{productInfo.cbd}</h1></div> will function the same
     return (
-        <Body style={{width: "100%"}}>
+    	<ProductBody>
         	<ColumnsDetails>
 	        	<ProductDetailsWrapper>
 		            <ProductName>{productInfo.productName}</ProductName>
 		            <Strand>{productInfo.strand}</Strand>
 		      		<Unit>{productInfo.companyName}</Unit>
-		            <Unit>{productInfo.haverstDate}</Unit>
+		            <DateUnit>{productInfo.haverstDate}</DateUnit>
 		        </ProductDetailsWrapper>
 		        <Thumbnail src="https://s3.us-east-2.amazonaws.com/www.budfaxs.com/Images/frostynug.jpg"/>
 		    </ColumnsDetails>
@@ -138,10 +146,33 @@ const ProductPage = ({ productInfo }) => {
 	            </ColumnsBud>
 	            <Unit>Number of Units: {productInfo.numberOfUnits}</Unit>
 	        </BudStatsWrapper>
-	        <DescriptionBox> adfasdkljfhasdkjlfhasdjkfh</DescriptionBox>
+	        <DescriptionBox> Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</DescriptionBox>
 	        <Verified>Verified Icon</Verified>
-        </Body>
+	    </ProductBody>
     );
 };
 
 export default ProductPage;
+
+
+// <ProductBody>
+// 	    	<ColumnsDetails>
+// 	        	<ProductDetailsWrapper>
+// 		            <ProductName>{productInfo.productName}</ProductName>
+// 		            <Strand>{productInfo.strand}</Strand>
+// 		      		<Unit>{productInfo.companyName}</Unit>
+// 		            <Unit>{productInfo.haverstDate}</Unit>
+// 		        </ProductDetailsWrapper>
+// 		        <Thumbnail src="https://s3.us-east-2.amazonaws.com/www.budfaxs.com/Images/frostynug.jpg"/>
+// 		    </ColumnsDetails>
+// 		    <BudStatsWrapper>
+// 		    	<ColumnsBud>
+// 		            <BudStats>THC: {productInfo.thc}%</BudStats>
+// 		            <BudStats>THCa: {productInfo.thca}%</BudStats>
+// 		            <BudStats>CBD: {productInfo.cbd}%</BudStats>
+// 	            </ColumnsBud>
+// 	            <Unit>Number of Units: {productInfo.numberOfUnits}</Unit>
+// 	        </BudStatsWrapper>
+// 	        <DescriptionBox> adfasdkljfhasdkjlfhasdjkfh</DescriptionBox>
+// 	        <Verified>Verified Icon</Verified>
+// </ProductBody>

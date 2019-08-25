@@ -5,8 +5,8 @@ import styled from "styled-components";
 import QrReader from "react-qr-reader";
 
 const StyledQrReader = styled(QrReader)`
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     border-radius: 15px;
 `;
 

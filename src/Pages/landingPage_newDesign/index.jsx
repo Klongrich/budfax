@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { LogoWithTextHorizontal } from "../../Components/Logos/LogoWithTextHorizontal";
 import { Input } from "./LocalComponents/Input";
-import { Body, Header } from "../UniversalStyles/Theme";
+import { Body, Header, DebugBox } from "../UniversalStyles/Theme";
 import QrScanner from "./LocalComponents/QrScanner";
 import ProductPage from "../ProductPage";
-import CompanyInfoPage from "../CompanyInfoPage/companyinfo"
+import CompanyInfoPage from "../CompanyInfoPage/companyinfo";
+import ProductNotFound from "../ProductNotFoundPage";
 
+
+const notFound = () => {
+    return <ProductNotFound/>;
+}
 
 const LandingPage = () => {
     const [productInfo, setProductInfo] = useState(); // look into react hooks if you want to better understand this black magic wizardry
@@ -34,7 +39,7 @@ const LandingPage = () => {
                     });
                 }
             })
-            .catch(error => alert("Product Not Found"));
+            .catch(error => notFound());
         console.log(productInfo);
         setProductId("");
     }
@@ -59,6 +64,7 @@ const LandingPage = () => {
 
     const handleError = err => {
         console.log(err);
+
     };
 
     return (
@@ -72,7 +78,7 @@ const LandingPage = () => {
             </Header>
             <Body>
                 {productInfo ? ( // if theres product info, load the product page. if not load landing page. Will probably refactor later
-                    <ProductPage productInfo={productInfo} />
+                        <ProductPage productInfo={productInfo} />
                 ) : (
                     <>  
                         <h5> Scan Code Here </h5>
@@ -92,9 +98,6 @@ const LandingPage = () => {
                     </>
                     
                 )}
-
-                
-
             </Body>
         </>
     );

@@ -11,15 +11,22 @@ export const Body = styled.div`
     justify-content: center !important;
     align-items: center !important;
     border: 1px solid black;
-    overflow: scroll;
+    ;
 `;
+
+// overflow: scroll
 
 export const Header = styled.div`
     z-index: 2;
     height: 72px;
     width: 100%;
     background-color: white;
-   
     position: absolute;
+`;
+
+export const DebugBox = styled.div`
+    border: 5px dotted red;
+    height: 100%;
+    width: 100%;    
 `;
 //  box-shadow: 0 0 0 #00b585;
