@@ -7,7 +7,7 @@ import DataImage from "./superawesome.png"
 const Container = styled.div`
 
     margin: 0;
-    height: 1250px;
+    height: 1200px;
     width: 100%;
     text-align:center;
     margin-top:80px;
@@ -55,11 +55,11 @@ const Descript2causeidkhowtopassparameters = styled.div`
 
 const SignUP = styled.div`
     margin:0;
-    margin-top:40px;
     background-color: black;
-    height:180px;
+    height:150px;
     width:100%;
     color:white;
+    
 `;
 
 const CompanyInfo = () => {
@@ -115,7 +115,7 @@ const CompanyInfo = () => {
 
             <SignUP>
                 <h1>Sign Up</h1>
-                <p>Put button here that leads to like a grower sign up forum?</p>
+                <p>Put button here that leads to like grower sign up forum?</p>
             </SignUP>
 
 
