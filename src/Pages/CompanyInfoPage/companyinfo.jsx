@@ -7,7 +7,7 @@ import DataImage from "./superawesome.png"
 const Container = styled.div`
 
     margin: 0;
-    height: 1500px;
+    height: 1250px;
     width: 100%;
     text-align:center;
     margin-top:80px;
@@ -51,6 +51,15 @@ const Descript2causeidkhowtopassparameters = styled.div`
     margin-left:610px;
     font-size: 20px;
     padding-top: 10px;
+`;
+
+const SignUP = styled.div`
+    margin:0;
+    margin-top:40px;
+    background-color: black;
+    height:180px;
+    width:100%;
+    color:white;
 `;
 
 const CompanyInfo = () => {
@@ -104,6 +113,10 @@ const CompanyInfo = () => {
                <strong><p>Yeah Don't know what I'll put here but it'll explain how the software works</p></strong>
             </Descript2causeidkhowtopassparameters>
 
+            <SignUP>
+                <h1>Sign Up</h1>
+                <p>Put button here that leads to like a grower sign up forum?</p>
+            </SignUP>
 
 
         </Container>
