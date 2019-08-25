@@ -6,7 +6,6 @@ export const Body = styled.div`
     background-color: white;
     z-index: 0;
     padding-top: 72px;
-    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
