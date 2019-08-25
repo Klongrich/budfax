@@ -23,17 +23,16 @@ const Body = styled.div`
     flex-direction: column;
     justify-content: left;
     align-items: left;
-    border: 1px solid black;
     overflow: scroll;
 `;
 
 
 const ProductDetailsWrapper = styled.div`
-    width: 40%;
+    width: 55%;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center !important;
+    justify-content: left !important;
     align-items: left !important;
     padding: 10px;
 `;
@@ -41,12 +40,26 @@ const ProductDetailsWrapper = styled.div`
 
 const ProductName = styled.div`
 	font-family: roboto;
-	font-size: 1.5em;
+	font-size: 2em;
+	margin: 1%;
 `;
 
-const ColumnsDiv = styled.div`
+const Strand = styled.div`
+	font-size: 1.25em;
+	margin: 0.5%;
+`;
+
+// WHY TF WONT THIS DISPLAY ITS CONTENT CENTERED
+const ColumnsBud = styled.div`
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
+	margin-left: 8%;
+`;
+
+const ColumnsDetails = styled.div`
+	display: flex;
+	flex-direction: row;
+	margin-left: 2%;
 `;
 
 //img
@@ -54,17 +67,15 @@ const Thumbnail = styled.div`
 	border-radius: 15px;
 	border: 2px dotted red;
 	height: 160px;
-	width: 60%;
+	width: 45%;
 	margin: 5px 10px;
 `;
 
 const BudStatsWrapper = styled.div`
 	margin-top: 2%;
-	width: 100%;
-	padding-left: 2%;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid green;
+	text-align: center;
 `;
 
 const BudStats = styled.div`
@@ -75,36 +86,47 @@ const BudStats = styled.div`
 
 const Unit = styled.div`
 	font-size: 1em;
-	text-align: center;
-	
 `;
 
 const DescriptionBox = styled.p`
-	
+	width: 100%;
+	height: 25%;
+	padding: 20px;
+	font-size: 14px;
+`;
+
+const Verified = styled.div`
+	width: 100;
+	height: 15%;
+	padding: 15px;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
 `;
 
 const ProductPage = ({ productInfo }) => {
     // Don't need to map. Create styled components in this folder, <div> <h1>{productInfo.cbd}</h1></div> will function the same
     return (
         <Body style={{width: "100%"}}>
-        	<ColumnsDiv>
+        	<ColumnsDetails>
 	        	<ProductDetailsWrapper>
 		            <ProductName>{productInfo.productName}</ProductName>
-		            <p>{productInfo.companyName}</p>
-		            <p>{productInfo.strand}</p>
+		            <Strand>{productInfo.strand}</Strand>
+		      		<Unit>{productInfo.companyName}</Unit>
+		            <Unit>{productInfo.haverstDate}</Unit>
 		        </ProductDetailsWrapper>
 		        <Thumbnail>Image: {productInfo.pictureName}</Thumbnail>
-		    </ColumnsDiv>
-		    <Unit>Packaged on {productInfo.haverstDate}</Unit>
+		    </ColumnsDetails>
 		    <BudStatsWrapper>
-		    	<ColumnsDiv>
+		    	<ColumnsBud>
 		            <BudStats>THC: {productInfo.thc}%</BudStats>
 		            <BudStats>THCa: {productInfo.thca}%</BudStats>
 		            <BudStats>CBD: {productInfo.cbd}%</BudStats>
-	            </ColumnsDiv>
+	            </ColumnsBud>
 	            <Unit>Number of Units: {productInfo.numberOfUnits}</Unit>
 	        </BudStatsWrapper>
-
+	        <DescriptionBox> adfasdkljfhasdkjlfhasdjkfh</DescriptionBox>
+	        <Verified>Verified Icon</Verified>
         </Body>
     );
 };
