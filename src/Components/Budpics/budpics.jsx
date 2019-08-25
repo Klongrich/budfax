@@ -10,5 +10,5 @@ const SetImageSize = styled.img`
 `;
 
 export const DankBudPic = ({ width, height, file_path}) => {
-    return <SetImageSize width={width} height={height} src={require(file_path)} />;
+    return <SetImageSize width={width} height={height} src={file_path} />;
 };
