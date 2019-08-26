@@ -11,7 +11,7 @@ import ProductNotFound from "../ProductNotFoundPage";
 const LandingPage = () => {
     const [productInfo, setProductInfo] = useState(); // look into react hooks if you want to better understand this black magic wizardry
     const [productId, setProductId] = useState("");
-    const [isFound, setIsFound] = useState("");
+    const [isFound, setIsFound] = useState("true");
 
     const getData = () => {
         fetch(
@@ -62,6 +62,10 @@ const LandingPage = () => {
         console.log(err);
     };
 
+    const handleNotFound = () => {
+        setIsFound(true);
+    }
+
     return (
         <div>
             <Header>
@@ -79,7 +83,7 @@ const LandingPage = () => {
                         <div>
                             <h5> Scan Code Here </h5>
                             <QrScanner
-                                delay={1000}
+                                delay={9000}
                                 onError={handleError}
                                 onScan={onQrScannerScan}
                             />
@@ -91,7 +95,7 @@ const LandingPage = () => {
                             <CompanyInfoPage />
                         </div>
                     ))}
-                <ProductNotFound />
+                {!isFound ? (<ProductNotFound  onClick={handleNotFound}/>) : (console.log("found"))}
             </Body>
         </div>
     );
